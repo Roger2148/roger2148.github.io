@@ -210,6 +210,90 @@
             display: flex;
             align-items: center;
             padding-top: 70px;
+            position: relative;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        .scroll-indicator:hover .chevron {
+            border-color: var(--color-primary);
+        }
+
+        .chevron {
+            width: 20px;
+            height: 20px;
+            border-left: 2px solid var(--color-text-muted);
+            border-bottom: 2px solid var(--color-text-muted);
+            transform: rotate(-45deg);
+            transition: border-color 0.3s ease;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease, background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: var(--color-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top:hover .chevron-up {
+            border-color: white;
+        }
+
+        .chevron-up {
+            width: 16px;
+            height: 16px;
+            border-left: 2px solid var(--color-text-muted);
+            border-bottom: 2px solid var(--color-text-muted);
+            transform: rotate(135deg);
+            transition: border-color 0.3s ease;
         }
 
         .hero-content {
@@ -272,6 +356,12 @@
             background: var(--color-accent-light);
             border-color: var(--color-accent);
             opacity: 1;
+        }
+
+        .hero-links svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
         }
 
         /* ===== About Section ===== */
@@ -338,9 +428,69 @@
             font-size: 0.95rem;
         }
 
+        .project-short {
+            margin-bottom: 0;
+        }
+
+        .project-meta-full {
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            margin-top: var(--space-sm);
+            margin-bottom: var(--space-xs);
+        }
+
+        .read-more, .read-less {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .read-more:hover, .read-less:hover {
+            color: var(--color-text);
+            text-decoration: underline;
+        }
+
+        .project-full {
+            margin-top: var(--space-sm);
+        }
+
         /* ===== Publications Section ===== */
         .publications {
             background: var(--color-bg-alt);
+        }
+
+        /* Publication Filter Tabs */
+        .pub-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: var(--space-lg);
+            justify-content: center;
+        }
+
+        .pub-filter-btn {
+            padding: 0.5rem 1.25rem;
+            background: transparent;
+            border: 1px solid var(--color-border);
+            border-radius: 2rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pub-filter-btn:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .pub-filter-btn.active {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: white;
         }
 
         .pub-list {
@@ -359,6 +509,11 @@
             padding-bottom: 0;
         }
 
+        /* Hide publications with data-show="false" */
+        .pub-item[data-show="false"] {
+            display: none;
+        }
+
         .pub-type {
             font-size: 0.75rem;
             font-weight: 600;
@@ -372,6 +527,12 @@
             font-family: var(--font-display);
             font-size: 1.1rem;
             margin-bottom: var(--space-xs);
+        }
+
+        .pub-authors {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-bottom: 4px;
         }
 
         .pub-venue {
@@ -437,6 +598,75 @@
             color: var(--color-text-muted);
         }
 
+        /* ===== Funding Section ===== */
+        .funding {
+            background: var(--color-bg-alt);
+        }
+
+        .funding-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .funding-item {
+            padding: var(--space-md);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+        }
+
+        .funding-item h3 {
+            margin-bottom: var(--space-xs);
+        }
+
+        .funding-meta {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-xs);
+        }
+
+        .funding-amount {
+            font-weight: 600;
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .funding-short {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        .funding-full {
+            margin-top: var(--space-sm);
+        }
+
+        .funding-grant {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+        }
+
+        .funding-full .funding-meta {
+            font-size: 0.95rem;
+        }
+
+        .funding-full .funding-amount {
+            font-size: 0.95rem;
+        }
+
+        .funding-read-more {
+            font-size: 0.85rem;
+            margin-top: var(--space-xs);
+            margin-bottom: 0;
+        }
+
         /* ===== Contact Section ===== */
         .contact {
             text-align: center;
@@ -445,9 +675,10 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             gap: var(--space-sm);
             margin-top: var(--space-md);
+            text-align: left;
         }
 
         .contact-item {
@@ -550,7 +781,9 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li><a href="#experience">Career</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#funding">Funding</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-toggle" onclick="toggleMenu()">
@@ -563,7 +796,9 @@
             <a href="#about" onclick="toggleMenu()">About</a>
             <a href="#research" onclick="toggleMenu()">Research</a>
             <a href="#publications" onclick="toggleMenu()">Publications</a>
-            <a href="#experience" onclick="toggleMenu()">Experience</a>
+            <a href="#experience" onclick="toggleMenu()">Career</a>
+            <a href="#education" onclick="toggleMenu()">Education</a>
+            <a href="#funding" onclick="toggleMenu()">Funding</a>
             <a href="#contact" onclick="toggleMenu()">Contact</a>
         </div>
     </header>
@@ -573,8 +808,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-image">
-                    <!-- Add your photo here -->
-                    <img src="your-photo.jpg" alt="Heng Zhang">
+                    <img src="profile_photo.jpeg" alt="Heng Zhang">
                 </div>
                 <div class="hero-text">
                     <h1>Heng Zhang</h1>
@@ -583,15 +817,35 @@
                         Developing bio-inspired AI systems for computer vision and NLP through predictive processing and self-organization principles.
                     </p>
                     <div class="hero-links">
-                        <a href="mailto:rogerzhangheng@gmail.com">✉ Email</a>
-                        <a href="https://github.com/Roger2148" target="_blank">GitHub</a>
-                        <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">LinkedIn</a>
-                        <a href="#" target="_blank">Google Scholar</a>
+                        <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ" target="_blank">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm5.25-8.8-5.25 7.2-5.25-7.2L12 0l5.25 5.2z"/></svg>
+                            Google Scholar
+                        </a>
+                        <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/Roger2148" target="_blank">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://ircn.jp/en/" target="_blank">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            IRCN
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="scroll-indicator" id="scrollIndicator" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
+        <div class="chevron"></div>
+    </div>
+
+    <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="chevron-up"></div>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -601,12 +855,10 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        <!-- Your bio paragraph 1 -->
-                        Brief introduction about your research focus and current work...
+                        I am a postdoctoral researcher at the International Research Center for Neurointelligence (IRCN), University of Tokyo, in collaboration with KTH Royal Institute of Technology. My research develops bio-inspired AI systems for computer vision and natural language processing by drawing on principles of predictive processing and self-organization observed in biological systems.
                     </p>
                     <p>
-                        <!-- Your bio paragraph 2 -->
-                        Additional background on your approach and interests...
+                        I focus on creating adaptive and robust learning frameworks that excel in dynamic, uncertain environments. My work spans unsupervised learning, dynamical systems, neural representations, and sequence learning. Through computational modeling of brain functions—particularly prediction and complex sequence processing—I aim to develop artificial intelligence that reflects the efficiency and resilience of biological cognition.
                     </p>
                 </div>
                 <div class="skills-container">
@@ -617,9 +869,13 @@
                         <span class="skill-tag">NLP</span>
                         <span class="skill-tag">Reservoir Computing</span>
                         <span class="skill-tag">Self-Organization</span>
+                        <span class="skill-tag">Dynamical Systems</span>
+                        <span class="skill-tag">Unsupervised Learning</span>
+                        <span class="skill-tag">Robustness</span>
                         <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
                         <span class="skill-tag">Python</span>
-                        <!-- Add more skills -->
+                        <span class="skill-tag">MATLAB</span>
                     </div>
                 </div>
             </div>
@@ -630,27 +886,57 @@
     <section id="research">
         <div class="container">
             <span class="section-label">Research</span>
-            <h2>Selected Projects</h2>
+            <h2>Research Interests</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-expanded="false">
                     <h3>Self-Organizing Dynamical Equations (SODE)</h3>
-                    <p class="project-meta">3 Publications, 2 Submissions</p>
-                    <p>Project description placeholder...</p>
+                    <p class="project-meta" style="display: none;">3 Publications, 2 Submissions, 1 Draft</p>
+                    <p class="project-short">Bio-inspired systems for complex sequential learning using self-organization and nonlinear dynamics. Enables adaptive learning without backpropagation. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
+                    <div class="project-full" style="display: none;">
+                        <p>Bio-inspired systems leveraging self-organization and nonlinear dynamical principles for complex sequential learning. Employs attractor-repeller dynamics driven by Hebbian and anti-Hebbian rules, enabling robust chunking and adaptive learning without objective functions or back-propagation.</p>
+                        <p class="project-meta-full">3 Publications, 2 Submissions, 1 Draft</p>
+                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-expanded="false">
                     <h3>Robust Bio-inspired Vision Systems</h3>
-                    <p class="project-meta">2 Submissions</p>
-                    <p>Project description placeholder...</p>
+                    <p class="project-meta" style="display: none;">2 Submissions</p>
+                    <p class="project-short">Unsupervised image segmentation systems that maintain performance under severe noise and corruption, mimicking human visual perception. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
+                    <div class="project-full" style="display: none;">
+                        <p>Extending SODE with random network-based feature generation for spatial segmentation. Achieves remarkable robustness in unsupervised image segmentation under severe noise and corruption, mimicking human vision and Gestalt principles.</p>
+                        <p class="project-meta-full">2 Submissions</p>
+                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-expanded="false">
                     <h3>Xenovert: Adaptive Distribution Shift</h3>
-                    <p class="project-meta">1 Submission, 1 Draft</p>
-                    <p>Project description placeholder...</p>
+                    <p class="project-meta" style="display: none;">1 Submission, 1 Draft</p>
+                    <p class="project-short">Biologically-inspired algorithm for real-time adaptation to distribution shifts using tree-based mapping structures. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
+                    <div class="project-full" style="display: none;">
+                        <p>An adaptive algorithm inspired by biological flexibility for online distribution shift adjustment. Uses a perfect binary tree to map source distributions to shifted targets while preserving relationships with downstream operations.</p>
+                        <p class="project-meta-full">1 Submission, 1 Draft</p>
+                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Reservoir Computing Frameworks</h3>
-                    <p class="project-meta">2 Publications, 2 Drafts</p>
-                    <p>Project description placeholder...</p>
+                <div class="project-card" data-expanded="false">
+                    <h3>Advancing Reservoir Computing</h3>
+                    <p class="project-meta" style="display: none;">2 Publications, 2 Drafts</p>
+                    <p class="project-short">Bio-inspired sparse recurrent neural networks leveraging high-dimensional dynamics for temporal and spatial processing. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
+                    <div class="project-full" style="display: none;">
+                        <p>Comprehensive frameworks for bio-inspired sparse recurrent neural networks. Leveraging high-dimensional representations and rich nonlinear dynamics for complex temporal and spatial data processing.</p>
+                        <p class="project-meta-full">2 Publications, 2 Drafts</p>
+                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    </div>
+                </div>
+                <div class="project-card" data-expanded="false">
+                    <h3>Neuro-like Temporal Learning Systems</h3>
+                    <p class="project-meta" style="display: none;">1 Draft • Collaboration with KTH</p>
+                    <p class="project-short">BCPNN-based attractor networks for rare-event learning in temporal data streams with modular hypercolumn architecture. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
+                    <div class="project-full" style="display: none;">
+                        <p>BCPNN-based attractor networks with modular hypercolumn architecture for rare-event learning in realistic temporal data streams. Implements learning-replay pipelines with epsilon-bounded probability learning.</p>
+                        <p class="project-meta-full">1 Draft • Collaboration with KTH</p>
+                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -661,66 +947,159 @@
         <div class="container">
             <span class="section-label">Publications</span>
             <h2>Selected Works</h2>
+
+            <!-- Category Filter Tabs -->
+            <div class="pub-filters">
+                <button class="pub-filter-btn active" onclick="filterPublications('all')">All</button>
+                <button class="pub-filter-btn" onclick="filterPublications('under-review')">Under Review</button>
+                <button class="pub-filter-btn" onclick="filterPublications('journal')">Journal Articles</button>
+                <button class="pub-filter-btn" onclick="filterPublications('conference')">Conference Papers</button>
+                <button class="pub-filter-btn" onclick="filterPublications('review')">Reviews</button>
+            </div>
+
+            <!--
+                PUBLICATION TOGGLE INSTRUCTIONS:
+                To hide a publication, change data-show="true" to data-show="false"
+                To show a publication, change data-show="false" to data-show="true"
+                Example: <div class="pub-item" data-show="false"> will hide that publication
+            -->
             <div class="pub-list">
-                <div class="pub-item">
-                    <p class="pub-type">Journal</p>
-                    <p class="pub-title">Publication title here</p>
-                    <p class="pub-venue">Venue, Year</p>
+                <!-- Publications listed from newest to oldest -->
+
+                <!-- 2026 Under Review -->
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Under Review</p>
+                    <p class="pub-title">SyncMapV2: Robust and Adaptive Unsupervised Segmentation</p>
+                    <p class="pub-authors">Heng Zhang, Zikang Wan, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">IEEE Trans. Pattern Analysis and Machine Intelligence, 2026</p>
+                </div>
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Under Review</p>
+                    <p class="pub-title">RECAP: Local Hebbian Prototype Learning as a Self-Organizing Readout for Reservoir Dynamics</p>
+                    <p class="pub-authors">Heng Zhang</p>
+                    <p class="pub-venue">Neurocomputing, 2026</p>
+                </div>
+
+
+                <!-- 2025 Under Review -->
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Under Review</p>
+                    <p class="pub-title">Self-Organizing to Learn Dynamical Hierarchies</p>
+                    <p class="pub-authors">Danilo Vasconcellos Vargas, Tham Yik Foong, Heng Zhang</p>
+                    <p class="pub-venue">Scientific Reports, 2025</p>
+                </div>
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Under Review</p>
+                    <p class="pub-title">Adapting to Covariate Shift in Real-time by Encoding Trees with Motion Equations</p>
+                    <p class="pub-authors">Tham Yik Foong, Heng Zhang, Mao Po Yuan, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">In Submission, 2025</p>
+                </div>
+
+                <!-- 2023 Journal Articles -->
+                <div class="pub-item" data-show="true" data-category="journal">
+                    <p class="pub-type">Journal Article</p>
+                    <p class="pub-title">Symmetrical SyncMap for imbalanced general chunking problems</p>
+                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">Physica D: Nonlinear Phenomena (Top 6%/9% in Mathematics/Nonlinear Dynamics), IF: 3.7, 2023</p>
                     <div class="pub-links">
-                        <a href="#">Paper</a>
-                        <a href="#">Code</a>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0167278923002774" target="_blank">Paper Link</a>
                     </div>
                 </div>
-                <div class="pub-item">
-                    <p class="pub-type">Journal</p>
-                    <p class="pub-title">Publication title here</p>
-                    <p class="pub-venue">Venue, Year</p>
+                <div class="pub-item" data-show="true" data-category="journal">
+                    <p class="pub-type">Journal Article</p>
+                    <p class="pub-title">Magnum: Tackling high-dimensional structures with self-organization</p>
+                    <p class="pub-authors">Mao Po Yuan, Yikfoong Tham, Heng Zhang, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">Neurocomputing (Top 4%/7% in Cognitive Neuroscience/Computer Science), IF: 5.7, 2023</p>
                     <div class="pub-links">
-                        <a href="#">Paper</a>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0925231223006318" target="_blank">Paper Link</a>
                     </div>
                 </div>
-                <div class="pub-item">
+                <div class="pub-item" data-show="true" data-category="review">
+                    <p class="pub-type">Review Article</p>
+                    <p class="pub-title">A survey on reservoir computing and its interdisciplinary applications beyond traditional machine learning</p>
+                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">IEEE Access (Top 8% in General Engineering), IF: 3.5, 2023 — 60+ citations </p>
+                    <div class="pub-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10196105/" target="_blank">Paper Link</a>
+                    </div>
+                </div>
+
+                <!-- 2022 Conference -->
+                <div class="pub-item" data-show="true" data-category="conference">
                     <p class="pub-type">Conference</p>
-                    <p class="pub-title">Publication title here</p>
-                    <p class="pub-venue">Venue, Year</p>
+                    <p class="pub-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A Space-time Analysis</p>
+                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">5th Artificial Intelligence and Cloud Computing Conference (AICCC), Osaka, 2022</p>
                     <div class="pub-links">
-                        <a href="#">Paper</a>
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3582099.3582102" target="_blank">Paper Link</a>
                     </div>
                 </div>
-                <!-- Add more publications -->
+
+                <!-- 2020 Conference -->
+                <div class="pub-item" data-show="true" data-category="conference">
+                    <p class="pub-type">Conference</p>
+                    <p class="pub-title">Comparison of Disturbance Rejection Performance between Three Types of UAV Linear Controllers</p>
+                    <p class="pub-authors">Chao Huang, Heng Zhang</p>
+                    <p class="pub-venue">2020 7th International Conference on Information Science and Control Engineering (ICISCE), IEEE, 2020</p>
+                    <div class="pub-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/9532379/" target="_blank">Paper Link</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Career Section -->
     <section id="experience">
         <div class="container">
-            <span class="section-label">Experience</span>
-            <h2>Career & Education</h2>
+            <span class="section-label">Career</span>
+            <h2>Professional Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="timeline-date">April 2025 — Present</span>
-                    <h3 class="timeline-title">Project Researcher</h3>
-                    <p class="timeline-org">University of Tokyo (IRCN)</p>
-                    <p class="timeline-desc">Brief description...</p>
+                    <h3 class="timeline-title">Postdoctoral Researcher</h3>
+                    <p class="timeline-org">University of Tokyo — IRCN</p>
+                    <p class="timeline-desc">Collaborative initiative with KTH Royal Institute of Technology. Computational modeling of brain functions including prediction and complex sequence processing for bio-inspired AI.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Oct 2024 — May 2025</span>
                     <h3 class="timeline-title">Postdoctoral Researcher</h3>
                     <p class="timeline-org">Kyushu University</p>
-                    <p class="timeline-desc">Brief description...</p>
+                    <p class="timeline-desc">Developing robust and adaptive machine learning models. Building bio-inspired AI systems resistant to adversarial attacks and noise corruptions.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">Oct 2021 — Sept 2024</span>
-                    <h3 class="timeline-title">Ph.D. in AI & Information Science</h3>
+                    <span class="timeline-date">May 2024 — Present</span>
+                    <h3 class="timeline-title">System Engineer</h3>
+                    <p class="timeline-org">MiraiX.org</p>
+                    <p class="timeline-desc">3D open-world game development, machine learning engineering, and UI/UX design.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">July 2022 — Sept 2024</span>
+                    <h3 class="timeline-title">Research Assistant</h3>
                     <p class="timeline-org">Kyushu University</p>
-                    <p class="timeline-desc">Brief description...</p>
+                    <p class="timeline-desc">Research assistant for projects in mathematics and information engineering. Lab assistant for stem cell culturing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <span class="section-label">Education</span>
+            <h2>Academic Background</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">Oct 2021 — Sept 2024</span>
+                    <h3 class="timeline-title">Ph.D. in Artificial Intelligence & Information Science</h3>
+                    <p class="timeline-org">Kyushu University</p>
+                    <p class="timeline-desc">Thesis: "Adaptive and Robust Learning with Self-Organizing and Nonlinear Dynamics." Full-funded by SPRING program from JST.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Sept 2019 — Dec 2020</span>
                     <h3 class="timeline-title">MSc. Communications & Signal Processing</h3>
                     <p class="timeline-org">University of Manchester</p>
-                    <p class="timeline-desc">First-Class Honours</p>
+                    <p class="timeline-desc">First-Class Honours. Outstanding Distinction grade in master's thesis on human gait classification using machine learning.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Sept 2015 — July 2019</span>
@@ -732,19 +1111,104 @@
         </div>
     </section>
 
+    <!-- Funding Section -->
+    <section id="funding" class="funding">
+        <div class="container">
+            <span class="section-label">Funding</span>
+            <h2>External Funding Contributions</h2>
+            <div class="funding-list">
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">WPI-IRCN Retreat Brainstorming Awards, UTokyo • 2025–2026</p>
+                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">WPI-IRCN Retreat Brainstorming Awards, UTokyo • 2025–2026</p>
+                        <p class="funding-meta">Intrinsic functionalities of biological networks with multi-reservoir systems</p>
+                        <p class="funding-amount">¥800,000 • Co-Investigator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">The Telecommunications Advancement Foundation • 2025–2026</p>
+                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">The Telecommunications Advancement Foundation • 2025–2026</p>
+                        <p class="funding-meta">Improving AI security by developing unsupervised, robust, and adaptive AI systems</p>
+                        <p class="funding-amount">¥2,105,000 • Co-Investigator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) • 2022–2026</p>
+                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) • 2022–2026</p>
+                        <p class="funding-meta">Creation of photonic computing utilizing the ultimate performance of light</p>
+                        <p class="funding-amount">¥20,000,000 • Research Collaborator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">Leading Company • 2023–2025</p>
+                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">Leading Company • 2023–2025</p>
+                        <p class="funding-meta">Small anomaly detection algorithm for autonomous driving based on Inpainting</p>
+                        <p class="funding-amount">¥15,000,000 • Research Collaborator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023</p>
+                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023</p>
+                        <p class="funding-meta">Learning based on Self-Organization - Pioneering a Novel Foundation for AI</p>
+                        <p class="funding-amount">¥5,000,000 • Major Research Collaborator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">Japan Science and Technology Agency (JST) • 2021–2024</p>
+                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">Japan Science and Technology Agency (JST) • 2021–2024</p>
+                        <p class="funding-meta">Support for Pioneering Research Initiated by the Next Generation (SPRING)</p>
+                        <p class="funding-amount">¥8,500,000 • Highly-selected Student</p>
+                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <span class="section-label">Contact</span>
             <h2>Get in Touch</h2>
             <div class="contact-info">
-                <span class="contact-item">📍 Tokyo, Japan</span>
-                <a href="mailto:rogerzhangheng@gmail.com" class="contact-item">rogerzhangheng@gmail.com</a>
+                <span class="contact-item">📍 International Research Center for Neurointelligence (IRCN)<br>
+                The University of Tokyo<br>
+                7-3-1 Hongo, Bunkyo-ku, Tokyo, Japan 113-0033</span>
+                <a href="mailto:rogerzhangheng@gmail.com" class="contact-item">rogerzhangheng [at] gmail [dot] com</a>
+                <span class="contact-item">📞 090-2341-7951</span>
             </div>
             <div class="contact-socials">
                 <a href="https://github.com/Roger2148" target="_blank">GitHub</a>
                 <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">Google Scholar</a>
+                <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ" target="_blank">Google Scholar</a>
             </div>
         </div>
     </section>
@@ -780,6 +1244,98 @@
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
+        });
+
+        // Publication filtering
+        function filterPublications(category) {
+            const publications = document.querySelectorAll('.pub-item');
+            const buttons = document.querySelectorAll('.pub-filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter publications
+            publications.forEach(pub => {
+                if (pub.getAttribute('data-show') === 'false') {
+                    return; // Keep manually hidden items hidden
+                }
+
+                if (category === 'all') {
+                    pub.style.display = 'block';
+                } else {
+                    if (pub.getAttribute('data-category') === category) {
+                        pub.style.display = 'block';
+                    } else {
+                        pub.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Toggle project card expansion
+        function toggleProject(event, link) {
+            event.preventDefault();
+            const card = link.closest('.project-card');
+            const shortDesc = card.querySelector('.project-short');
+            const fullDesc = card.querySelector('.project-full');
+            const isExpanded = card.getAttribute('data-expanded') === 'true';
+
+            if (isExpanded) {
+                // Collapse
+                fullDesc.style.display = 'none';
+                shortDesc.style.display = 'block';
+                card.setAttribute('data-expanded', 'false');
+            } else {
+                // Expand
+                fullDesc.style.display = 'block';
+                shortDesc.style.display = 'none';
+                card.setAttribute('data-expanded', 'true');
+            }
+        }
+
+        // Toggle funding item expansion
+        function toggleFunding(event, link) {
+            event.preventDefault();
+            const item = link.closest('.funding-item');
+            const collapsedDiv = item.querySelector('.funding-collapsed');
+            const fullDiv = item.querySelector('.funding-full');
+            const isExpanded = item.getAttribute('data-expanded') === 'true';
+
+            if (isExpanded) {
+                // Collapse
+                fullDiv.style.display = 'none';
+                collapsedDiv.style.display = 'block';
+                item.setAttribute('data-expanded', 'false');
+            } else {
+                // Expand
+                fullDiv.style.display = 'block';
+                collapsedDiv.style.display = 'none';
+                item.setAttribute('data-expanded', 'true');
+            }
+        }
+
+        // Scroll indicator opacity control
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Scroll indicator: fade out when scrolling down
+            const fadeDistance = window.innerHeight * 0.35;
+            const opacity = Math.max(0, 0.6 - (scrollTop / fadeDistance) * 0.6);
+            scrollIndicator.style.opacity = opacity;
+
+            // Back-to-top button: fade in when scrolled 20% of page
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight;
+
+            if (scrollPercent > 0.2) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
         });
     </script>
 </body>
