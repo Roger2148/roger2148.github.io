@@ -97,6 +97,75 @@
             padding: var(--space-xl) 0;
         }
 
+        /* ===== Collapsible Sections ===== */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-md);
+            cursor: pointer;
+            user-select: none;
+            transition: margin-bottom 0.3s ease;
+        }
+
+        .section-header.collapsed {
+            margin-bottom: var(--space-xs);
+        }
+
+        .section-title-wrapper {
+            flex: 1;
+        }
+
+        .section-collapse-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.4;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            margin-left: var(--space-md);
+        }
+
+        .section-collapse-icon:hover {
+            opacity: 0.8;
+        }
+
+        .section-collapse-icon .icon-minus {
+            width: 16px;
+            height: 2px;
+            background: var(--color-text);
+            border-radius: 1px;
+        }
+
+        .section-collapse-icon .icon-chevron {
+            width: 12px;
+            height: 12px;
+            border-left: 2px solid var(--color-text);
+            border-bottom: 2px solid var(--color-text);
+            transform: rotate(-45deg);
+        }
+
+        .section-content {
+            max-height: 10000px;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+        }
+
+        .section-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .section-header.collapsed .icon-minus {
+            display: none;
+        }
+
+        .section-header:not(.collapsed) .icon-chevron {
+            display: none;
+        }
+
         /* ===== Header & Navigation ===== */
         header {
             position: fixed;
@@ -603,6 +672,71 @@
             background: var(--color-bg-alt);
         }
 
+        /* ===== More Section ===== */
+        .more {
+            background: var(--color-bg);
+        }
+
+        .more-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        .more-top-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .more-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-sm);
+            color: var(--color-primary);
+        }
+
+        .more-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .more-category li {
+            padding: var(--space-xs) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .more-category li:last-child {
+            border-bottom: none;
+        }
+
+        .more-category.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .presentation-item {
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .presentation-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .presentation-title {
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+        }
+
+        .presentation-meta {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
         .funding-list {
             display: flex;
             flex-direction: column;
@@ -829,6 +963,7 @@
                 <li><a href="#experience">Career</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#funding">Funding</a></li>
+                <li><a href="#more">More</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-toggle" onclick="toggleMenu()">
@@ -844,6 +979,7 @@
             <a href="#experience" onclick="toggleMenu()">Career</a>
             <a href="#education" onclick="toggleMenu()">Education</a>
             <a href="#funding" onclick="toggleMenu()">Funding</a>
+            <a href="#more" onclick="toggleMenu()">More</a>
             <a href="#contact" onclick="toggleMenu()">Contact</a>
         </div>
     </header>
@@ -895,9 +1031,17 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <span class="section-label">About</span>
-            <h2>Background</h2>
-            <div class="about-content">
+            <div class="section-header" onclick="toggleSection('about')">
+                <div class="section-title-wrapper">
+                    <span class="section-label">About</span>
+                    <h2>Background</h2>
+                </div>
+                <div class="section-collapse-icon">
+                    <div class="icon-minus"></div>
+                    <div class="icon-chevron"></div>
+                </div>
+            </div>
+            <div class="section-content about-content">
                 <div class="about-text">
                     <p>
                         I am a postdoctoral researcher at the International Research Center for Neurointelligence (IRCN), University of Tokyo, in collaboration with KTH Royal Institute of Technology. My research develops bio-inspired AI systems for computer vision and natural language processing by drawing on principles of predictive processing and self-organization observed in biological systems.
@@ -1238,6 +1382,76 @@
         </div>
     </section>
 
+    <!-- More Section -->
+    <section id="more" class="more">
+        <div class="container">
+            <div class="section-header collapsed" onclick="toggleSection('more')">
+                <div class="section-title-wrapper">
+                    <span class="section-label">More</span>
+                    <h2>Additional Information</h2>
+                </div>
+                <div class="section-collapse-icon">
+                    <div class="icon-minus"></div>
+                    <div class="icon-chevron"></div>
+                </div>
+            </div>
+
+            <div class="section-content collapsed">
+                <div class="more-grid">
+                    <div class="more-top-row">
+                        <div class="more-category">
+                            <h3>Languages</h3>
+                            <ul>
+                                <li>English - Highly proficient</li>
+                                <li>Chinese - Native</li>
+                                <li>Cantonese - Native</li>
+                                <li>Japanese - Limited Conversational</li>
+                            </ul>
+                        </div>
+
+                        <div class="more-category">
+                            <h3>Teaching Experience</h3>
+                            <ul>
+                                <li><strong>Teaching Assistant</strong><br>
+                                    Prompt Engineering, Kyushu University<br>
+                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">Apr 2024 - Sept 2024</span>
+                                </li>
+                                <li><strong>Lecturer</strong><br>
+                                    Education Career Planning, New Oriental Education & Technology Group<br>
+                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">Apr 2022 - Sept 2022</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="more-category">
+                        <h3>Presentations</h3>
+
+                        <div class="presentation-item">
+                            <div class="presentation-title">Bio-inspired Hybrid Predictive Model for Robust Visual Scene Understanding</div>
+                            <div class="presentation-meta">Oral Presentation • IRCN Retreat, Odawara, Japan • October 23, 2025</div>
+                        </div>
+
+                        <div class="presentation-item">
+                            <div class="presentation-title">Introduction to Robust and Adaptive AI Paradigm</div>
+                            <div class="presentation-meta">Oral Presentation • AI Incubator Salon Talk, IRCN, The University of Tokyo, Japan • October 18, 2025</div>
+                        </div>
+
+                        <div class="presentation-item">
+                            <div class="presentation-title">Spatial Relativity - Robust AI for Approximate Computing</div>
+                            <div class="presentation-meta">Poster Presentation • Second Open Symposium on Photonic Computing, NICT, Koganei, Japan • December 17, 2024</div>
+                        </div>
+
+                        <div class="presentation-item">
+                            <div class="presentation-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A Space-time Analysis</div>
+                            <div class="presentation-meta">Oral Presentation • 5th Artificial Intelligence and Cloud Computing Conference, Osaka, Japan • December 17, 2022</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1297,6 +1511,67 @@
                 document.querySelector('.nav-toggle').classList.remove('active');
                 document.querySelector('.nav-mobile').classList.remove('active');
             }
+        });
+
+        // Toggle section collapse
+        function toggleSection(sectionId) {
+            const header = document.querySelector(`#${sectionId} .section-header`);
+            const content = document.querySelector(`#${sectionId} .section-content`);
+
+            header.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+        }
+
+        // Auto-convert all sections to collapsible on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section[id]:not(#about):not(#more)');
+
+            sections.forEach(section => {
+                const sectionId = section.id;
+                const container = section.querySelector('.container');
+
+                if (!container) return;
+
+                // Find the title elements
+                const label = container.querySelector('.section-label');
+                const title = container.querySelector('h2');
+
+                if (!label || !title) return;
+
+                // Check if already has section-header (skip if yes)
+                if (container.querySelector('.section-header')) return;
+
+                // Create header wrapper
+                const header = document.createElement('div');
+                header.className = 'section-header';
+                header.onclick = () => toggleSection(sectionId);
+
+                const titleWrapper = document.createElement('div');
+                titleWrapper.className = 'section-title-wrapper';
+                titleWrapper.appendChild(label);
+                titleWrapper.appendChild(title);
+
+                const icon = document.createElement('div');
+                icon.className = 'section-collapse-icon';
+                icon.innerHTML = '<div class="icon-minus"></div><div class="icon-chevron"></div>';
+
+                header.appendChild(titleWrapper);
+                header.appendChild(icon);
+
+                // Wrap content
+                const contentWrapper = document.createElement('div');
+                contentWrapper.className = 'section-content';
+
+                // Move all children except the newly created header into content wrapper
+                while (container.firstChild) {
+                    if (container.firstChild === header) break;
+                    contentWrapper.appendChild(container.firstChild);
+                }
+
+                // Insert header and content into container
+                container.insertBefore(header, container.firstChild);
+                container.appendChild(contentWrapper);
+            });
         });
 
         // Smooth scroll for Safari
