@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heng Zhang | Postdoctoral Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         /* ===== CSS Variables ===== */
         :root {
@@ -28,7 +31,9 @@
         }
 
         /* ===== Reset & Base ===== */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -65,15 +70,26 @@
         }
 
         /* ===== Typography ===== */
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-family: var(--font-display);
             font-weight: 400;
             line-height: 1.2;
         }
 
-        h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
-        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-md); }
-        h3 { font-size: 1.25rem; }
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: var(--space-md);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
 
         .section-label {
             font-family: var(--font-body);
@@ -310,12 +326,19 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
                 transform: translateX(-50%) translateY(0);
             }
+
             40% {
                 transform: translateX(-50%) translateY(-10px);
             }
+
             60% {
                 transform: translateX(-50%) translateY(-5px);
             }
@@ -479,7 +502,7 @@
 
         .project-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
         }
 
         .project-card h3 {
@@ -508,7 +531,8 @@
             margin-bottom: var(--space-xs);
         }
 
-        .read-more, .read-less {
+        .read-more,
+        .read-less {
             color: var(--color-accent);
             text-decoration: none;
             font-weight: 500;
@@ -516,13 +540,47 @@
             transition: color 0.2s ease;
         }
 
-        .read-more:hover, .read-less:hover {
+        .read-more:hover,
+        .read-less:hover {
             color: var(--color-text);
             text-decoration: underline;
         }
 
         .project-full {
             margin-top: var(--space-sm);
+        }
+
+        .project-image {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-top: var(--space-sm);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.02);
+        }
+
+        /* Layout: Content above Image always */
+        .project-card {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: var(--space-sm);
+        }
+
+        /* Desktop Layout adjustments */
+        @media (min-width: 768px) {
+            .project-card {
+                gap: var(--space-md);
+            }
         }
 
         /* ===== Publications Section ===== */
@@ -892,7 +950,8 @@
                 display: flex;
             }
 
-            .nav-toggle, .nav-mobile {
+            .nav-toggle,
+            .nav-mobile {
                 display: none;
             }
 
@@ -936,6 +995,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -946,11 +1006,20 @@
             animation: fadeUp 0.6s ease forwards;
         }
 
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -995,23 +1064,37 @@
                     <h1>Heng Zhang</h1>
                     <p class="hero-title">Postdoctoral Researcher at IRCN, University of Tokyo</p>
                     <p class="hero-tagline">
-                        Developing bio-inspired AI systems for computer vision and NLP through predictive processing and self-organization principles.
+                        Developing bio-inspired AI systems for computer vision and NLP through predictive processing and
+                        self-organization principles.
                     </p>
                     <div class="hero-links">
-                        <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ" target="_blank">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm5.25-8.8-5.25 7.2-5.25-7.2L12 0l5.25 5.2z"/></svg>
+                        <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ"
+                            target="_blank">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 24c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm5.25-8.8-5.25 7.2-5.25-7.2L12 0l5.25 5.2z" />
+                            </svg>
                             Google Scholar
                         </a>
                         <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
                             LinkedIn
                         </a>
                         <a href="https://github.com/Roger2148" target="_blank">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
                             GitHub
                         </a>
                         <a href="https://ircn.jp/en/" target="_blank">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
                             IRCN
                         </a>
                     </div>
@@ -1020,7 +1103,8 @@
         </div>
     </section>
 
-    <div class="scroll-indicator" id="scrollIndicator" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
+    <div class="scroll-indicator" id="scrollIndicator"
+        onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
         <div class="chevron"></div>
     </div>
 
@@ -1044,10 +1128,18 @@
             <div class="section-content about-content">
                 <div class="about-text">
                     <p>
-                        I am a postdoctoral researcher at the International Research Center for Neurointelligence (IRCN), University of Tokyo, in collaboration with KTH Royal Institute of Technology. My research develops bio-inspired AI systems for computer vision and natural language processing by drawing on principles of predictive processing and self-organization observed in biological systems.
+                        I am a postdoctoral researcher at the International Research Center for Neurointelligence
+                        (IRCN), University of Tokyo, in collaboration with KTH Royal Institute of Technology. My
+                        research develops bio-inspired AI systems for computer vision and natural language processing by
+                        drawing on principles of predictive processing and self-organization observed in biological
+                        systems.
                     </p>
                     <p>
-                        I focus on creating adaptive and robust learning frameworks that excel in dynamic, uncertain environments. My work spans unsupervised learning, dynamical systems, neural representations, and sequence learning. Through computational modeling of brain functions—particularly prediction and complex sequence processing—I aim to develop artificial intelligence that reflects the efficiency and resilience of biological cognition.
+                        I focus on creating adaptive and robust learning frameworks that excel in dynamic, uncertain
+                        environments. My work spans unsupervised learning, dynamical systems, neural representations,
+                        and sequence learning. Through computational modeling of brain functions—particularly prediction
+                        and complex sequence processing—I aim to develop artificial intelligence that reflects the
+                        efficiency and resilience of biological cognition.
                     </p>
                 </div>
                 <div class="skills-container">
@@ -1078,53 +1170,105 @@
             <h2>Research Interests</h2>
             <div class="projects-grid">
                 <div class="project-card" data-expanded="false">
-                    <h3>Self-Organizing Dynamical Equations (SODE)</h3>
-                    <p class="project-meta" style="display: none;">3 Publications, 2 Submissions, 1 Draft</p>
-                    <p class="project-short">Bio-inspired systems for complex sequential learning using self-organization and nonlinear dynamics. Enables adaptive learning without backpropagation. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
-                    <div class="project-full" style="display: none;">
-                        <p>Bio-inspired systems leveraging self-organization and nonlinear dynamical principles for complex sequential learning. Employs attractor-repeller dynamics driven by Hebbian and anti-Hebbian rules, enabling robust chunking and adaptive learning without objective functions or back-propagation.</p>
-                        <p class="project-meta-full">3 Publications, 2 Submissions, 1 Draft</p>
-                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    <div class="project-image">
+                        <img src="slide/SODE.png" alt="Self-Organizing Dynamical Equations">
+                    </div>
+                    <div class="project-content">
+                        <h3>Self-Organizing Dynamical Equations (SODE)</h3>
+                        <p class="project-meta" style="display: none;">3 Publications, 2 Submissions, 1 Draft</p>
+                        <p class="project-short">Bio-inspired systems for complex sequential learning using
+                            self-organization and nonlinear dynamics. Enables adaptive learning without backpropagation.
+                            <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a>
+                        </p>
+                        <div class="project-full" style="display: none;">
+                            <p>Bio-inspired systems leveraging self-organization and nonlinear dynamical principles for
+                                complex sequential learning. Employs attractor-repeller dynamics driven by Hebbian and
+                                anti-Hebbian rules, enabling robust chunking and adaptive learning without objective
+                                functions or back-propagation.</p>
+                            <p class="project-meta-full">3 Publications, 2 Submissions, 1 Draft</p>
+                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card" data-expanded="false">
-                    <h3>Robust Bio-inspired Vision Systems</h3>
-                    <p class="project-meta" style="display: none;">2 Submissions</p>
-                    <p class="project-short">Unsupervised image segmentation systems that maintain performance under severe noise and corruption, mimicking human visual perception. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
-                    <div class="project-full" style="display: none;">
-                        <p>Extending SODE with random network-based feature generation for spatial segmentation. Achieves remarkable robustness in unsupervised image segmentation under severe noise and corruption, mimicking human vision and Gestalt principles.</p>
-                        <p class="project-meta-full">2 Submissions</p>
-                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    <div class="project-image">
+                        <img src="slide/Robust Bio-inspired Vision Systems.png"
+                            alt="Robust Bio-inspired Vision Systems">
+                    </div>
+                    <div class="project-content">
+                        <h3>Robust Bio-inspired Vision Systems</h3>
+                        <p class="project-meta" style="display: none;">2 Submissions</p>
+                        <p class="project-short">Unsupervised image segmentation systems that maintain performance under
+                            severe noise and corruption, mimicking human visual perception. <a href="#"
+                                class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
+                        <div class="project-full" style="display: none;">
+                            <p>Extending SODE with random network-based feature generation for spatial segmentation.
+                                Achieves remarkable robustness in unsupervised image segmentation under severe noise and
+                                corruption, mimicking human vision and Gestalt principles.</p>
+                            <p class="project-meta-full">2 Submissions</p>
+                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card" data-expanded="false">
-                    <h3>Xenovert: Adaptive Distribution Shift</h3>
-                    <p class="project-meta" style="display: none;">1 Submission, 1 Draft</p>
-                    <p class="project-short">Biologically-inspired algorithm for real-time adaptation to distribution shifts using tree-based mapping structures. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
-                    <div class="project-full" style="display: none;">
-                        <p>An adaptive algorithm inspired by biological flexibility for online distribution shift adjustment. Uses a perfect binary tree to map source distributions to shifted targets while preserving relationships with downstream operations.</p>
-                        <p class="project-meta-full">1 Submission, 1 Draft</p>
-                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    <div class="project-image">
+                        <img src="slide/Xenovert.png" alt="Xenovert Adaptation">
+                    </div>
+                    <div class="project-content">
+                        <h3>Xenovert: Adaptive Distribution Shift</h3>
+                        <p class="project-meta" style="display: none;">1 Submission, 1 Draft</p>
+                        <p class="project-short">Biologically-inspired algorithm for real-time adaptation to
+                            distribution
+                            shifts using tree-based mapping structures. <a href="#" class="read-more"
+                                onclick="toggleProject(event, this)">Read more</a></p>
+                        <div class="project-full" style="display: none;">
+                            <p>An adaptive algorithm inspired by biological flexibility for online distribution shift
+                                adjustment. Uses a perfect binary tree to map source distributions to shifted targets
+                                while
+                                preserving relationships with downstream operations.</p>
+                            <p class="project-meta-full">1 Submission, 1 Draft</p>
+                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card" data-expanded="false">
-                    <h3>Advancing Reservoir Computing</h3>
-                    <p class="project-meta" style="display: none;">2 Publications, 2 Drafts</p>
-                    <p class="project-short">Bio-inspired sparse recurrent neural networks leveraging high-dimensional dynamics for temporal and spatial processing. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
-                    <div class="project-full" style="display: none;">
-                        <p>Comprehensive frameworks for bio-inspired sparse recurrent neural networks. Leveraging high-dimensional representations and rich nonlinear dynamics for complex temporal and spatial data processing.</p>
-                        <p class="project-meta-full">2 Publications, 2 Drafts</p>
-                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    <div class="project-image">
+                        <img src="slide/Advancing Reservoir Computing.png" alt="Reservoir Computing">
+                    </div>
+                    <div class="project-content">
+                        <h3>Advancing Reservoir Computing</h3>
+                        <p class="project-meta" style="display: none;">2 Publications, 2 Drafts</p>
+                        <p class="project-short">Bio-inspired sparse recurrent neural networks leveraging
+                            high-dimensional
+                            dynamics for temporal and spatial processing. <a href="#" class="read-more"
+                                onclick="toggleProject(event, this)">Read more</a></p>
+                        <div class="project-full" style="display: none;">
+                            <p>Comprehensive frameworks for bio-inspired sparse recurrent neural networks. Leveraging
+                                high-dimensional representations and rich nonlinear dynamics for complex temporal and
+                                spatial data processing.</p>
+                            <p class="project-meta-full">2 Publications, 2 Drafts</p>
+                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card" data-expanded="false">
-                    <h3>Neuro-like Temporal Learning Systems</h3>
-                    <p class="project-meta" style="display: none;">1 Draft • Collaboration with KTH</p>
-                    <p class="project-short">BCPNN-based attractor networks for rare-event learning in temporal data streams with modular hypercolumn architecture. <a href="#" class="read-more" onclick="toggleProject(event, this)">Read more</a></p>
-                    <div class="project-full" style="display: none;">
-                        <p>BCPNN-based attractor networks with modular hypercolumn architecture for rare-event learning in realistic temporal data streams. Implements learning-replay pipelines with epsilon-bounded probability learning.</p>
-                        <p class="project-meta-full">1 Draft • Collaboration with KTH</p>
-                        <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                    <div class="project-image">
+                        <img src="slide/Neuro-like Temporal Learning Systems.png" alt="Temporal Learning Systems">
+                    </div>
+                    <div class="project-content">
+                        <h3>Neuro-like Temporal Learning Systems</h3>
+                        <p class="project-meta" style="display: none;">1 Draft • Collaboration with KTH</p>
+                        <p class="project-short">BCPNN-based attractor networks for rare-event learning in temporal data
+                            streams with modular hypercolumn architecture. <a href="#" class="read-more"
+                                onclick="toggleProject(event, this)">Read more</a></p>
+                        <div class="project-full" style="display: none;">
+                            <p>BCPNN-based attractor networks with modular hypercolumn architecture for rare-event
+                                learning
+                                in realistic temporal data streams. Implements learning-replay pipelines with
+                                epsilon-bounded probability learning.</p>
+                            <p class="project-meta-full">1 Draft • Collaboration with KTH</p>
+                            <a href="#" class="read-less" onclick="toggleProject(event, this)">Show less</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1164,7 +1308,8 @@
                 </div>
                 <div class="pub-item" data-show="true" data-category="under-review">
                     <p class="pub-type">Under Review</p>
-                    <p class="pub-title">RECAP: Local Hebbian Prototype Learning as a Self-Organizing Readout for Reservoir Dynamics</p>
+                    <p class="pub-title">RECAP: Local Hebbian Prototype Learning as a Self-Organizing Readout for
+                        Reservoir Dynamics</p>
                     <p class="pub-authors">Heng Zhang</p>
                     <p class="pub-venue">Neurocomputing, 2026</p>
                 </div>
@@ -1179,7 +1324,8 @@
                 </div>
                 <div class="pub-item" data-show="true" data-category="under-review">
                     <p class="pub-type">Under Review</p>
-                    <p class="pub-title">Adapting to Covariate Shift in Real-time by Encoding Trees with Motion Equations</p>
+                    <p class="pub-title">Adapting to Covariate Shift in Real-time by Encoding Trees with Motion
+                        Equations</p>
                     <p class="pub-authors">Tham Yik Foong, Heng Zhang, Mao Po Yuan, Danilo Vasconcellos Vargas</p>
                     <p class="pub-venue">In Submission, 2025</p>
                 </div>
@@ -1189,23 +1335,28 @@
                     <p class="pub-type">Journal Article</p>
                     <p class="pub-title">Symmetrical SyncMap for imbalanced general chunking problems</p>
                     <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">Physica D: Nonlinear Phenomena (Top 6%/9% in Mathematics/Nonlinear Dynamics), IF: 3.7, 2023</p>
+                    <p class="pub-venue">Physica D: Nonlinear Phenomena (Top 6%/9% in Mathematics/Nonlinear Dynamics),
+                        IF: 3.7, 2023</p>
                     <div class="pub-links">
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0167278923002774" target="_blank">Paper Link</a>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0167278923002774"
+                            target="_blank">Paper Link</a>
                     </div>
                 </div>
                 <div class="pub-item" data-show="true" data-category="journal">
                     <p class="pub-type">Journal Article</p>
                     <p class="pub-title">Magnum: Tackling high-dimensional structures with self-organization</p>
                     <p class="pub-authors">Mao Po Yuan, Yikfoong Tham, Heng Zhang, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">Neurocomputing (Top 4%/7% in Cognitive Neuroscience/Computer Science), IF: 5.7, 2023</p>
+                    <p class="pub-venue">Neurocomputing (Top 4%/7% in Cognitive Neuroscience/Computer Science), IF: 5.7,
+                        2023</p>
                     <div class="pub-links">
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0925231223006318" target="_blank">Paper Link</a>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0925231223006318"
+                            target="_blank">Paper Link</a>
                     </div>
                 </div>
                 <div class="pub-item" data-show="true" data-category="review">
                     <p class="pub-type">Review Article</p>
-                    <p class="pub-title">A survey on reservoir computing and its interdisciplinary applications beyond traditional machine learning</p>
+                    <p class="pub-title">A survey on reservoir computing and its interdisciplinary applications beyond
+                        traditional machine learning</p>
                     <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
                     <p class="pub-venue">IEEE Access (Top 8% in General Engineering), IF: 3.5, 2023 — 60+ citations </p>
                     <div class="pub-links">
@@ -1216,9 +1367,11 @@
                 <!-- 2022 Conference -->
                 <div class="pub-item" data-show="true" data-category="conference">
                     <p class="pub-type">Conference</p>
-                    <p class="pub-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A Space-time Analysis</p>
+                    <p class="pub-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A
+                        Space-time Analysis</p>
                     <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
-                    <p class="pub-venue">5th Artificial Intelligence and Cloud Computing Conference (AICCC), Osaka, 2022</p>
+                    <p class="pub-venue">5th Artificial Intelligence and Cloud Computing Conference (AICCC), Osaka, 2022
+                    </p>
                     <div class="pub-links">
                         <a href="https://dl.acm.org/doi/abs/10.1145/3582099.3582102" target="_blank">Paper Link</a>
                     </div>
@@ -1227,9 +1380,11 @@
                 <!-- 2020 Conference -->
                 <div class="pub-item" data-show="true" data-category="conference">
                     <p class="pub-type">Conference</p>
-                    <p class="pub-title">Comparison of Disturbance Rejection Performance between Three Types of UAV Linear Controllers</p>
+                    <p class="pub-title">Comparison of Disturbance Rejection Performance between Three Types of UAV
+                        Linear Controllers</p>
                     <p class="pub-authors">Chao Huang, Heng Zhang</p>
-                    <p class="pub-venue">2020 7th International Conference on Information Science and Control Engineering (ICISCE), IEEE, 2020</p>
+                    <p class="pub-venue">2020 7th International Conference on Information Science and Control
+                        Engineering (ICISCE), IEEE, 2020</p>
                     <div class="pub-links">
                         <a href="https://ieeexplore.ieee.org/abstract/document/9532379/" target="_blank">Paper Link</a>
                     </div>
@@ -1248,25 +1403,30 @@
                     <span class="timeline-date">April 2025 — Present</span>
                     <h3 class="timeline-title">Postdoctoral Researcher</h3>
                     <p class="timeline-org">University of Tokyo — IRCN</p>
-                    <p class="timeline-desc">Collaborative initiative with KTH Royal Institute of Technology. Computational modeling of brain functions including prediction and complex sequence processing for bio-inspired AI.</p>
+                    <p class="timeline-desc">Collaborative initiative with KTH Royal Institute of Technology.
+                        Computational modeling of brain functions including prediction and complex sequence processing
+                        for bio-inspired AI.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Oct 2024 — May 2025</span>
                     <h3 class="timeline-title">Postdoctoral Researcher</h3>
                     <p class="timeline-org">Kyushu University</p>
-                    <p class="timeline-desc">Developing robust and adaptive machine learning models. Building bio-inspired AI systems resistant to adversarial attacks and noise corruptions.</p>
+                    <p class="timeline-desc">Developing robust and adaptive machine learning models. Building
+                        bio-inspired AI systems resistant to adversarial attacks and noise corruptions.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">May 2024 — Present</span>
                     <h3 class="timeline-title">System Engineer</h3>
                     <p class="timeline-org">MiraiX.org</p>
-                    <p class="timeline-desc">3D open-world game development, machine learning engineering, and UI/UX design.</p>
+                    <p class="timeline-desc">3D open-world game development, machine learning engineering, and UI/UX
+                        design.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">July 2022 — Sept 2024</span>
                     <h3 class="timeline-title">Research Assistant</h3>
                     <p class="timeline-org">Kyushu University</p>
-                    <p class="timeline-desc">Research assistant for projects in mathematics and information engineering. Lab assistant for stem cell culturing.</p>
+                    <p class="timeline-desc">Research assistant for projects in mathematics and information engineering.
+                        Lab assistant for stem cell culturing.</p>
                 </div>
             </div>
         </div>
@@ -1282,13 +1442,15 @@
                     <span class="timeline-date">Oct 2021 — Sept 2024</span>
                     <h3 class="timeline-title">Ph.D. in Artificial Intelligence & Information Science</h3>
                     <p class="timeline-org">Kyushu University</p>
-                    <p class="timeline-desc">Thesis: "Adaptive and Robust Learning with Self-Organizing and Nonlinear Dynamics." Full-funded by SPRING program from JST.</p>
+                    <p class="timeline-desc">Thesis: "Adaptive and Robust Learning with Self-Organizing and Nonlinear
+                        Dynamics." Full-funded by SPRING program from JST.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Sept 2019 — Dec 2020</span>
                     <h3 class="timeline-title">MSc. Communications & Signal Processing</h3>
                     <p class="timeline-org">University of Manchester</p>
-                    <p class="timeline-desc">First-Class Honours. Outstanding Distinction grade in master's thesis on human gait classification using machine learning.</p>
+                    <p class="timeline-desc">First-Class Honours. Outstanding Distinction grade in master's thesis on
+                        human gait classification using machine learning.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-date">Sept 2015 — July 2019</span>
@@ -1309,73 +1471,95 @@
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
                         <p class="funding-short">WPI-IRCN Retreat Brainstorming Awards, UTokyo • 2025–2026</p>
-                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">WPI-IRCN Retreat Brainstorming Awards, UTokyo • 2025–2026</p>
-                        <p class="funding-meta">Intrinsic functionalities of biological networks with multi-reservoir systems</p>
+                        <p class="funding-meta">Intrinsic functionalities of biological networks with multi-reservoir
+                            systems</p>
                         <p class="funding-amount">¥800,000 • Co-Investigator</p>
-                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
                         <p class="funding-short">The Telecommunications Advancement Foundation • 2025–2026</p>
-                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">The Telecommunications Advancement Foundation • 2025–2026</p>
-                        <p class="funding-meta">Improving AI security by developing unsupervised, robust, and adaptive AI systems</p>
+                        <p class="funding-meta">Improving AI security by developing unsupervised, robust, and adaptive
+                            AI systems</p>
                         <p class="funding-amount">¥2,105,000 • Co-Investigator</p>
-                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) • 2022–2026</p>
-                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                        <p class="funding-short">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) •
+                            2022–2026</p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
-                        <p class="funding-grant">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) • 2022–2026</p>
-                        <p class="funding-meta">Creation of photonic computing utilizing the ultimate performance of light</p>
+                        <p class="funding-grant">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) •
+                            2022–2026</p>
+                        <p class="funding-meta">Creation of photonic computing utilizing the ultimate performance of
+                            light</p>
                         <p class="funding-amount">¥20,000,000 • Research Collaborator</p>
-                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
                         <p class="funding-short">Leading Company • 2023–2025</p>
-                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">Leading Company • 2023–2025</p>
-                        <p class="funding-meta">Small anomaly detection algorithm for autonomous driving based on Inpainting</p>
+                        <p class="funding-meta">Small anomaly detection algorithm for autonomous driving based on
+                            Inpainting</p>
                         <p class="funding-amount">¥15,000,000 • Research Collaborator</p>
-                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
-                        <p class="funding-short">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023</p>
-                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                        <p class="funding-short">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023
+                        </p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
-                        <p class="funding-grant">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023</p>
-                        <p class="funding-meta">Learning based on Self-Organization - Pioneering a Novel Foundation for AI</p>
+                        <p class="funding-grant">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023
+                        </p>
+                        <p class="funding-meta">Learning based on Self-Organization - Pioneering a Novel Foundation for
+                            AI</p>
                         <p class="funding-amount">¥5,000,000 • Major Research Collaborator</p>
-                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
                 <div class="funding-item" data-expanded="false">
                     <div class="funding-collapsed">
                         <p class="funding-short">Japan Science and Technology Agency (JST) • 2021–2024</p>
-                        <p class="funding-read-more"><a href="#" class="read-more" onclick="toggleFunding(event, this)">Read more</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
                     </div>
                     <div class="funding-full" style="display: none;">
                         <p class="funding-grant">Japan Science and Technology Agency (JST) • 2021–2024</p>
-                        <p class="funding-meta">Support for Pioneering Research Initiated by the Next Generation (SPRING)</p>
+                        <p class="funding-meta">Support for Pioneering Research Initiated by the Next Generation
+                            (SPRING)</p>
                         <p class="funding-amount">¥8,500,000 • Highly-selected Student</p>
-                        <p class="funding-read-more"><a href="#" class="read-less" onclick="toggleFunding(event, this)">Show less</a></p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
                     </div>
                 </div>
             </div>
@@ -1414,11 +1598,13 @@
                             <ul>
                                 <li><strong>Teaching Assistant</strong><br>
                                     Prompt Engineering, Kyushu University<br>
-                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">Apr 2024 - Sept 2024</span>
+                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">Apr 2024 - Sept
+                                        2024</span>
                                 </li>
                                 <li><strong>Lecturer</strong><br>
                                     Education Career Planning, New Oriental Education & Technology Group<br>
-                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">Apr 2022 - Sept 2022</span>
+                                    <span style="color: var(--color-text-muted); font-size: 0.9rem;">Apr 2022 - Sept
+                                        2022</span>
                                 </li>
                             </ul>
                         </div>
@@ -1428,23 +1614,30 @@
                         <h3>Presentations</h3>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Bio-inspired Hybrid Predictive Model for Robust Visual Scene Understanding</div>
-                            <div class="presentation-meta">Oral Presentation • IRCN Retreat, Odawara, Japan • October 23, 2025</div>
+                            <div class="presentation-title">Bio-inspired Hybrid Predictive Model for Robust Visual Scene
+                                Understanding</div>
+                            <div class="presentation-meta">Oral Presentation • IRCN Retreat, Odawara, Japan • October
+                                23, 2025</div>
                         </div>
 
                         <div class="presentation-item">
                             <div class="presentation-title">Introduction to Robust and Adaptive AI Paradigm</div>
-                            <div class="presentation-meta">Oral Presentation • AI Incubator Salon Talk, IRCN, The University of Tokyo, Japan • October 18, 2025</div>
+                            <div class="presentation-meta">Oral Presentation • AI Incubator Salon Talk, IRCN, The
+                                University of Tokyo, Japan • October 18, 2025</div>
                         </div>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Spatial Relativity - Robust AI for Approximate Computing</div>
-                            <div class="presentation-meta">Poster Presentation • Second Open Symposium on Photonic Computing, NICT, Koganei, Japan • December 17, 2024</div>
+                            <div class="presentation-title">Spatial Relativity - Robust AI for Approximate Computing
+                            </div>
+                            <div class="presentation-meta">Poster Presentation • Second Open Symposium on Photonic
+                                Computing, NICT, Koganei, Japan • December 17, 2024</div>
                         </div>
 
                         <div class="presentation-item">
-                            <div class="presentation-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A Space-time Analysis</div>
-                            <div class="presentation-meta">Oral Presentation • 5th Artificial Intelligence and Cloud Computing Conference, Osaka, Japan • December 17, 2022</div>
+                            <div class="presentation-title">Understanding SyncMap's Dynamics and Its Self-organization
+                                Properties: A Space-time Analysis</div>
+                            <div class="presentation-meta">Oral Presentation • 5th Artificial Intelligence and Cloud
+                                Computing Conference, Osaka, Japan • December 17, 2022</div>
                         </div>
                     </div>
                 </div>
@@ -1469,25 +1662,29 @@
                         <span class="contact-item-label">Email</span>
                         rogerzhangheng [at] gmail [dot] com
                     </div>
-<!--                    <div class="contact-item">-->
-<!--                        <span class="contact-item-label">Phone</span>-->
-<!--                        (+81)090-2341-7951-->
-<!--                    </div>-->
+                    <!--                    <div class="contact-item">-->
+                    <!--                        <span class="contact-item-label">Phone</span>-->
+                    <!--                        (+81)090-2341-7951-->
+                    <!--                    </div>-->
                 </div>
                 <div class="map-container">
-<!--                    <iframe-->
-<!--                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9282167891844!2d139.76183207589758!3d35.70996247257882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c2ffa206ea3%3A0x30e407498313ba95!2sUniversity%20of%20Tokyo!5e0!3m2!1sen!2sjp!4v1705000000000!5m2!1sen!2sjp"-->
-<!--                        allowfullscreen=""-->
-<!--                        loading="lazy"-->
-<!--                        referrerpolicy="no-referrer-when-downgrade">-->
-<!--                    </iframe>-->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.670348133987!2d139.75920227649402!3d35.709728972577935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3ad96a6241%3A0x34fe6ab8a94a4aba!2sIRCN!5e0!3m2!1sen!2sjp!4v1768922743233!5m2!1sen!2sjp" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    <!--                    <iframe-->
+                    <!--                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9282167891844!2d139.76183207589758!3d35.70996247257882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c2ffa206ea3%3A0x30e407498313ba95!2sUniversity%20of%20Tokyo!5e0!3m2!1sen!2sjp!4v1705000000000!5m2!1sen!2sjp"-->
+                    <!--                        allowfullscreen=""-->
+                    <!--                        loading="lazy"-->
+                    <!--                        referrerpolicy="no-referrer-when-downgrade">-->
+                    <!--                    </iframe>-->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.670348133987!2d139.75920227649402!3d35.709728972577935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3ad96a6241%3A0x34fe6ab8a94a4aba!2sIRCN!5e0!3m2!1sen!2sjp!4v1768922743233!5m2!1sen!2sjp"
+                        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
                 <div class="contact-socials">
                     <a href="https://github.com/Roger2148" target="_blank">GitHub</a>
                     <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">LinkedIn</a>
-                    <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ" target="_blank">Google Scholar</a>
+                    <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ"
+                        target="_blank">Google Scholar</a>
                 </div>
             </div>
         </div>
@@ -1525,7 +1722,7 @@
         }
 
         // Auto-convert all sections to collapsible on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const sections = document.querySelectorAll('section[id]:not(#about):not(#more)');
 
             sections.forEach(section => {
@@ -1660,7 +1857,7 @@
         const scrollIndicator = document.getElementById('scrollIndicator');
         const backToTop = document.getElementById('backToTop');
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             // Scroll indicator: fade out when scrolling down
@@ -1680,4 +1877,5 @@
         });
     </script>
 </body>
+
 </html>
