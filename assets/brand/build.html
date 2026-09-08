@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#faf9f7}
+  /* ---- favicon / app icon: 512x512 monogram ---- */
+  .icon{width:512px;height:512px;border-radius:112px;background:#faf9f7;position:relative;overflow:hidden;font-family:'Instrument Serif',Georgia,serif}
+  .icon::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 78% 22%,rgba(45,90,123,.20),transparent 46%),radial-gradient(circle at 18% 84%,rgba(196,69,54,.16),transparent 46%)}
+  .icon span{position:absolute;inset:0;display:grid;place-items:center;font-size:330px;line-height:1;color:#1a1a1a;letter-spacing:-.04em;transform:translate(-18px,-14px)}
+  .icon i{position:absolute;right:66px;bottom:88px;width:46px;height:46px;border-radius:50%;background:#2d5a7b}
+  /* ---- social card 1200x630 ---- */
+  .card{width:1200px;height:630px;position:relative;overflow:hidden;background:#faf9f7;font-family:'Source Sans 3',-apple-system,sans-serif;color:#1a1a1a}
+  .card::before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 82% 14%,rgba(45,90,123,.16),transparent 38%),radial-gradient(circle at 10% 92%,rgba(196,69,54,.13),transparent 38%)}
+  .card .photo{position:absolute;left:96px;top:135px;width:360px;height:360px;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 30px 60px -30px rgba(40,60,90,.45)}
+  .card .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .text{position:absolute;left:530px;top:150px;right:80px}
+  .card h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:112px;line-height:1;margin:0 0 22px;letter-spacing:-.01em}
+  .card .role{font-size:30px;color:#5a5a5a;margin:0 0 34px;line-height:1.35}
+  .card .ids{display:flex;gap:14px;flex-wrap:wrap}
+  .card .ids span{font-size:19px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;border-radius:999px;background:#fff;border:1px solid #e0ddd8;color:#2d5a7b}
+  .card .url{position:absolute;left:530px;bottom:64px;font-size:24px;color:#6b6b6b;letter-spacing:.02em}
+  .card .url b{color:#1a1a1a;font-weight:600}
+</style></head><body>
+<div id="icon" class="icon" hidden><span>HZ</span><i></i></div>
+<div id="card" class="card" hidden>
+  <div class="photo"><img src="../../profile_photo.jpeg" alt=""></div>
+  <div class="text"><h1>Heng Zhang</h1><p class="role">Postdoctoral Researcher<br>IRCN, The University of Tokyo</p>
+    <div class="ids"><span>Research</span><span>Developer</span><span>Music</span></div></div>
+  <div class="url"><b>roger2148.github.io</b> · bio-inspired AI · self-organizing dynamics</div>
+</div>
+<script>document.getElementById(location.hash.slice(1) || 'card').hidden = false;</script>
+</body></html>

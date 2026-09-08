@@ -304,6 +304,18 @@ It lists every key not yet in `zh-Hans.json` (lightbox captions included) and du
 
 Strings to leave English: add the class to `SKIP` in `lang.js` (whole element) or simply omit the key from the dictionary (element stays as is).
 
+### 3.12 Favicon and social preview card
+`assets/brand/` holds the favicon set (`favicon.ico`, `favicon-32.png`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`)
+and the Open Graph card `og-card.png` (1200×630). Both are rendered from `assets/brand/build.html` with headless Chrome so
+they use the site's fonts and colours: with the local server up, run
+`conda run -n bcpnn_local python assets/brand/make_brand.py`. Change the monogram, colours, photo or the card text in `build.html`.
+
+Every page's `<head>` carries `<meta name="description">`, the favicon links, `rel="canonical"`, the `og:*` and
+`twitter:*` tags. They are per page: **a new page needs its own block** (copy from a topic page and change `<title>`,
+description, `og:title`, `og:url`, `canonical`). The image is shared by all pages; use absolute URLs
+(`https://roger2148.github.io/…`). Slack, X, LinkedIn and WeChat read these; Slack caches a URL's preview for a while,
+so re-share with a `?v=2` suffix to see a change.
+
 ## 4. Checks before pushing
 
 1. Serve locally and load every touched page; check the phone width too (nav, cards, no horizontal scroll).
