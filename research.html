@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Heng Zhang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body id="top">
+    <header>
+        <nav class="container">
+            <a href="index.html" class="nav-logo">Heng Zhang</a>
+            <div class="nav"><div class="nav__group"><a class="nav__item" href="index.html" aria-haspopup="true">About me<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="index.html#top"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Hero</span><span class="nav-menu__sub">Who I am, at a glance</span></span></a></li><li><a href="index.html#about"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">Background</span><span class="nav-menu__sub">Bio and skills</span></span></a></li><li><a href="index.html#experience"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Professional Experience</span><span class="nav-menu__sub">Positions held</span></span></a></li><li><a href="index.html#education"><span class="nav-menu__num">04</span><span><span class="nav-menu__label">Academic Background</span><span class="nav-menu__sub">Degrees and theses</span></span></a></li><li><a href="index.html#more"><span class="nav-menu__num">05</span><span><span class="nav-menu__label">Additional Information</span><span class="nav-menu__sub">Languages and teaching</span></span></a></li><li><a href="index.html#contact"><span class="nav-menu__num">06</span><span><span class="nav-menu__label">Get in Touch</span><span class="nav-menu__sub">Email and profiles</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="research.html" aria-haspopup="true">As a Researcher<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="research.html#activities"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Activities</span><span class="nav-menu__sub">Posters and talks in pictures</span></span></a></li><li><a href="research.html#research"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">Research Interests</span><span class="nav-menu__sub">Current directions</span></span></a></li><li><a href="research.html#publications"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Selected Works</span><span class="nav-menu__sub">Papers by category</span></span></a></li><li><a href="research.html#presentations"><span class="nav-menu__num">04</span><span><span class="nav-menu__label">Presentations</span><span class="nav-menu__sub">Talks and posters</span></span></a></li><li><a href="research.html#funding"><span class="nav-menu__num">05</span><span><span class="nav-menu__label">Funding</span><span class="nav-menu__sub">Grants and awards</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="developer.html" aria-haspopup="true">As a Developer<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="developer.html#olden-flames"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Olden Flames</span><span class="nav-menu__sub">Open-world action game · MiraiX</span></span></a></li><li><a href="developer.html#syncmapv2"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">SyncMapV2 in Unreal Engine</span><span class="nav-menu__sub">A paper as a walkable 3D scene</span></span></a></li><li><a href="developer.html#japanese-teacher"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Japanese Speaking Teacher</span><span class="nav-menu__sub">Local AI speaking practice</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="music.html" aria-haspopup="true">As a Music Lover<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="music.html#music"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Piano & voice</span><span class="nav-menu__sub">Fujii Kaze covers, now playing</span></span></a></li><li><a href="music.html#covers"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">The playlist</span><span class="nav-menu__sub">All 17 covers on Bilibili</span></span></a></li><li><a href="music.html#artists"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Favorite artists</span><span class="nav-menu__sub">Who I keep coming back to</span></span></a></li></ul></div></div><a class="nav__item" href="#contact">Contact</a></div>
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="nav-mobile"><div class="nav-mobile__group"><a class="nav-mobile__title" href="index.html">About me</a><a href="index.html#top" onclick="toggleMenu()">Hero</a><a href="index.html#about" onclick="toggleMenu()">Background</a><a href="index.html#experience" onclick="toggleMenu()">Professional Experience</a><a href="index.html#education" onclick="toggleMenu()">Academic Background</a><a href="index.html#more" onclick="toggleMenu()">Additional Information</a><a href="index.html#contact" onclick="toggleMenu()">Get in Touch</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="research.html">As a Researcher</a><a href="research.html#activities" onclick="toggleMenu()">Activities</a><a href="research.html#research" onclick="toggleMenu()">Research Interests</a><a href="research.html#publications" onclick="toggleMenu()">Selected Works</a><a href="research.html#presentations" onclick="toggleMenu()">Presentations</a><a href="research.html#funding" onclick="toggleMenu()">Funding</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="developer.html">As a Developer</a><a href="developer.html#olden-flames" onclick="toggleMenu()">Olden Flames</a><a href="developer.html#syncmapv2" onclick="toggleMenu()">SyncMapV2 in Unreal Engine</a><a href="developer.html#japanese-teacher" onclick="toggleMenu()">Japanese Speaking Teacher</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="music.html">As a Music Lover</a><a href="music.html#music" onclick="toggleMenu()">Piano & voice</a><a href="music.html#covers" onclick="toggleMenu()">The playlist</a><a href="music.html#artists" onclick="toggleMenu()">Favorite artists</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="#contact" onclick="toggleMenu()">Contact</a></div></div>
+    </header>
+
+    <section id="activities" class="first-section">
+        <div class="container">
+            <span class="section-label">As a Researcher</span>
+            <h2>Activities</h2>
+
+            <div class="activities-grid">
+                <!-- Activities listed from newest to oldest. Each .stack-card: --ar = image width / height; class by orientation -->
+                <div class="activity-card activity-card--new">
+                    <span class="activity-new">New</span>
+                    <div class="activity-content">
+                        <p class="activity-kicker">Interactive site · Paper companion</p>
+                        <h3>Neural Noise Enables Accurate Internal Simulation of Rare Events</h3>
+                        <p class="activity-meta">Companion site for the paper · with Pawel Herman &amp; Zenas C. Chao · Sept 2026</p>
+                        <p>Play with the model in your browser: turn the noise knob, watch the rare events come out right. Also in Chinese and Japanese.</p>
+                    </div>
+                    <div class="activity-preview activity-preview--flat">
+                        <a class="site-preview" href="https://noise-bcpnn-simulation.pages.dev/" target="_blank" rel="noopener">
+                            <img src="assets/video/bcpnn_hero.jpg" alt="Companion site: ground-truth chain, simulated chain, rare-event rate and raster, with a noise knob" loading="lazy">
+                            <span class="site-preview__badge">Open the site &nearr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="activity-card activity-card--flip">
+                    <div class="activity-content">
+                        <p class="activity-kicker">Poster · NEURO2026</p>
+                        <h3>Noise-Driven Internal Simulation Facilitates Learning of Low-Probability Events in Predictive Neural Networks</h3>
+                        <p class="activity-meta">NEURO2026 · Kobe · Aug 1, 2026</p>
+                        <p>Poster 3P-465 at Japan's biggest neuroscience meeting. Try the model yourself on the <a href="https://noise-bcpnn-simulation.pages.dev/" target="_blank" rel="noopener">companion site</a>.</p>
+                    </div>
+                    <div class="activity-preview">
+                        <button class="stack-card stack-card--portrait" style="--ar: 1130 / 1600" type="button" data-full="assets/activities/neuro2026_poster.jpg" data-caption="NEURO2026 poster"><img src="assets/activities/neuro2026_poster.jpg" alt="NEURO2026 poster" loading="lazy"></button>
+                        <button class="stack-card stack-card--portrait" style="--ar: 1200 / 1600" type="button" data-full="assets/activities/neuro2026_photo2.jpg" data-caption="Presenting the poster at NEURO2026"><img src="assets/activities/neuro2026_photo2.jpg" alt="Presenting the poster at NEURO2026" loading="lazy"></button>
+                        <button class="stack-card stack-card--portrait" style="--ar: 1200 / 1600" type="button" data-full="assets/activities/neuro2026_photo1.jpg" data-caption="At the NEURO2026 entrance, Kobe"><img src="assets/activities/neuro2026_photo1.jpg" alt="At the NEURO2026 entrance, Kobe" loading="lazy"></button>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-content">
+                        <p class="activity-kicker">Poster · IRCN–NTU Joint Symposium</p>
+                        <h3>Noise-Enhanced Replay Facilitates Learning of Rare Event and Temporal Correlations in Brain-like Neural Network</h3>
+                        <p class="activity-meta">IRCN–NTU Joint Symposium · Singapore · Feb 3, 2026</p>
+                        <p>An early version of the noise-and-rare-events story, shown on the IRCN trip to NTU.</p>
+                    </div>
+                    <div class="activity-preview">
+                        <button class="stack-card stack-card--portrait" style="--ar: 1130 / 1600" type="button" data-full="assets/activities/ntu2026_poster.jpg" data-caption="IRCN–NTU symposium poster"><img src="assets/activities/ntu2026_poster.jpg" alt="IRCN–NTU symposium poster" loading="lazy"></button>
+                        <button class="stack-card stack-card--landscape" style="--ar: 1600 / 1066" type="button" data-full="assets/activities/ntu2026_photo2.jpg" data-caption="Group photo, NTU–IRCN Joint Workshop 2026, Singapore"><img src="assets/activities/ntu2026_photo2.jpg" alt="Group photo, NTU–IRCN Joint Workshop 2026, Singapore" loading="lazy"></button>
+                        <button class="stack-card stack-card--portrait" style="--ar: 1200 / 1600" type="button" data-full="assets/activities/ntu2026_photo1.jpg" data-caption="Presenting the poster at NTU, Singapore"><img src="assets/activities/ntu2026_photo1.jpg" alt="Presenting the poster at NTU, Singapore" loading="lazy"></button>
+                    </div>
+                </div>
+                <div class="activity-card activity-card--flip">
+                    <div class="activity-content">
+                        <p class="activity-kicker">Talk &amp; Poster · IRCN Retreat</p>
+                        <h3>Bio-inspired Hybrid Predictive Model for Robust Visual Scene Understanding</h3>
+                        <p class="activity-meta">IRCN Retreat · Odawara · Oct 23, 2025</p>
+                        <p>Talk and poster at the annual retreat: a reservoir plus Hebbian prototypes for robust vision.</p>
+                    </div>
+                    <div class="activity-preview">
+                        <button class="stack-card stack-card--portrait" style="--ar: 1131 / 1600" type="button" data-full="assets/activities/retreat2025_poster.jpg" data-caption="IRCN Retreat 2025 poster"><img src="assets/activities/retreat2025_poster.jpg" alt="IRCN Retreat 2025 poster" loading="lazy"></button>
+                        <button class="stack-card stack-card--square" style="--ar: 1600 / 1600" type="button" data-full="assets/activities/retreat2025_photo1.jpg" data-caption="At the poster, IRCN Retreat 2025"><img src="assets/activities/retreat2025_photo1.jpg" alt="At the poster, IRCN Retreat 2025" loading="lazy"></button>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-content">
+                        <p class="activity-kicker">Poster · Photonic Computing Symposium</p>
+                        <h3>Spatial Relativity: Robust AI for Approximate Computing</h3>
+                        <p class="activity-meta">Photonic Computing Symposium · NICT, Koganei · Dec 17, 2024</p>
+                        <p>Poster with the Vargas lab on self-organizing dynamics for photonic reservoirs.</p>
+                    </div>
+                    <div class="activity-preview">
+                        <button class="stack-card stack-card--portrait" style="--ar: 1131 / 1600" type="button" data-full="assets/activities/nict2024_poster.jpg" data-caption="Photonic Computing Symposium 2024 poster"><img src="assets/activities/nict2024_poster.jpg" alt="Photonic Computing Symposium 2024 poster" loading="lazy"></button>
+                        <button class="stack-card stack-card--portrait" style="--ar: 1200 / 1600" type="button" data-full="assets/activities/nict2024_photo1.jpg" data-caption="At the poster, NICT 2024"><img src="assets/activities/nict2024_photo1.jpg" alt="At the poster, NICT 2024" loading="lazy"></button>
+                    </div>
+                </div>
+                <div class="activity-card activity-card--flip">
+                    <div class="activity-content">
+                        <p class="activity-kicker">Talk · AICCC 2022</p>
+                        <h3>Understanding SyncMap's Dynamics and Its Self-organization Properties: A Space-time Analysis</h3>
+                        <p class="activity-meta">AICCC 2022 · Osaka · Dec 17, 2022</p>
+                        <p>My first conference talk, on how SyncMap organizes itself over space and time. Certificate included.</p>
+                    </div>
+                    <div class="activity-preview">
+                        <button class="stack-card stack-card--landscape" style="--ar: 1600 / 1200" type="button" data-full="assets/activities/aiccc2022_photo1.jpg" data-caption="Giving the talk at AICCC 2022, Osaka"><img src="assets/activities/aiccc2022_photo1.jpg" alt="Giving the talk at AICCC 2022, Osaka" loading="lazy"></button>
+                        <button class="stack-card stack-card--landscape" style="--ar: 1600 / 1200" type="button" data-full="assets/activities/aiccc2022_photo2.jpg" data-caption="Presentation certificate, AICCC 2022"><img src="assets/activities/aiccc2022_photo2.jpg" alt="Presentation certificate, AICCC 2022" loading="lazy"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="container">
+            <span class="section-label">Research</span>
+            <h2>Research Interests</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-expanded="false">
+                    <div class="project-image">
+                        <img src="slide/SODE.png" alt="Self-Organizing Dynamical Equations">
+                    </div>
+                    <div class="project-content">
+                        <h3><a class="project-title-link" href="topic-sode.html">Self-Organizing Dynamical Equations (SODE)</a></h3>
+                        <p class="project-short">Bio-inspired systems for complex sequential learning using
+                            self-organization and nonlinear dynamics. Enables adaptive learning without backpropagation.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card" data-expanded="false">
+                    <div class="project-image">
+                        <img src="slide/Robust Bio-inspired Vision Systems.png"
+                            alt="Robust Bio-inspired Vision Systems">
+                    </div>
+                    <div class="project-content">
+                        <h3><a class="project-title-link" href="topic-vision.html">Robust Bio-inspired Vision Systems</a></h3>
+                        <p class="project-short">Unsupervised image segmentation systems that maintain performance under
+                            severe noise and corruption, mimicking human visual perception.</p>
+                    </div>
+                </div>
+                <div class="project-card" data-expanded="false">
+                    <div class="project-image">
+                        <img src="slide/Xenovert.png" alt="Xenovert Adaptation">
+                    </div>
+                    <div class="project-content">
+                        <h3><a class="project-title-link" href="topic-xenovert.html">Xenovert: Adaptive Distribution Shift</a></h3>
+                        <p class="project-short">Biologically-inspired algorithm for real-time adaptation to
+                            distribution
+                            shifts using tree-based mapping structures.</p>
+                    </div>
+                </div>
+                <div class="project-card" data-expanded="false">
+                    <div class="project-image">
+                        <img src="slide/Advancing Reservoir Computing.png" alt="Reservoir Computing">
+                    </div>
+                    <div class="project-content">
+                        <h3><a class="project-title-link" href="topic-reservoir.html">Advancing Reservoir Computing</a></h3>
+                        <p class="project-short">Bio-inspired sparse recurrent neural networks leveraging
+                            high-dimensional
+                            dynamics for temporal and spatial processing.</p>
+                    </div>
+                </div>
+                <div class="project-card" data-expanded="false">
+                    <div class="project-image">
+                        <img src="slide/Neuro-like Temporal Learning Systems.png" alt="Temporal Learning Systems">
+                    </div>
+                    <div class="project-content">
+                        <h3><a class="project-title-link" href="topic-temporal.html">Neuro-like Temporal Learning Systems</a></h3>
+                        <p class="project-short">BCPNN-based attractor networks for rare-event learning in temporal data
+                            streams with modular hypercolumn architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="publications" class="publications">
+        <div class="container">
+            <span class="section-label">Publications</span>
+            <h2>Selected Works</h2>
+
+            <!-- Category Filter Tabs -->
+            <div class="pub-filters">
+                <button class="pub-filter-btn active" onclick="filterPublications('all')">All</button>
+                <button class="pub-filter-btn" onclick="filterPublications('under-review')">Under Review</button>
+                <button class="pub-filter-btn" onclick="filterPublications('journal')">Journal Articles</button>
+                <button class="pub-filter-btn" onclick="filterPublications('conference')">Conference Papers</button>
+                <button class="pub-filter-btn" onclick="filterPublications('review')">Reviews</button>
+            </div>
+
+            <!--
+                PUBLICATION TOGGLE INSTRUCTIONS:
+                To hide a publication, change data-show="true" to data-show="false"
+                To show a publication, change data-show="false" to data-show="true"
+                Example: <div class="pub-item" data-show="false"> will hide that publication
+            -->
+            <div class="pub-list">
+                <!-- Publications listed from newest to oldest -->
+
+                <!-- 2026 Soon to submit -->
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Soon to Submit</p>
+                    <p class="pub-title">Neural Noise Enables Accurate Internal Simulation of Rare Events</p>
+                    <p class="pub-authors">Heng Zhang, Pawel Herman, Zenas C. Chao</p>
+                    <p class="pub-venue">Manuscript in preparation, 2026</p>
+                    <div class="pub-links">
+                        <a href="https://noise-bcpnn-simulation.pages.dev/" target="_blank">Interactive companion site</a>
+                    </div>
+                </div>
+
+                <!-- 2026 Conference -->
+                <div class="pub-item" data-show="true" data-category="conference">
+                    <p class="pub-type">Conference</p>
+                    <p class="pub-title">RECAP: Local Hebbian Prototype Learning as a Self-Organizing Readout for
+                        Reservoir Dynamics</p>
+                    <p class="pub-authors">Heng Zhang</p>
+                    <p class="pub-venue">2026 9th Artificial Intelligence and Cloud Computing Conference (AICCC), ACM,
+                        Tokyo, December 18-19, 2026</p>
+                </div>
+
+                <!-- 2026 Under Review -->
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Under Review</p>
+                    <p class="pub-title">SyncMapV2: Robust and Adaptive Unsupervised Segmentation</p>
+                    <p class="pub-authors">Heng Zhang, Zikang Wan, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">IEEE Trans. Pattern Analysis and Machine Intelligence, 2026</p>
+                </div>
+
+
+                <!-- 2025 Under Review -->
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Under Review</p>
+                    <p class="pub-title">Self-Organizing to Learn Dynamical Hierarchies</p>
+                    <p class="pub-authors">Danilo Vasconcellos Vargas, Tham Yik Foong, Heng Zhang</p>
+                    <p class="pub-venue">Scientific Reports, 2025</p>
+                </div>
+                <div class="pub-item" data-show="true" data-category="under-review">
+                    <p class="pub-type">Under Review</p>
+                    <p class="pub-title">Adapting to Covariate Shift in Real-time by Encoding Trees with Motion
+                        Equations</p>
+                    <p class="pub-authors">Tham Yik Foong, Heng Zhang, Mao Po Yuan, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">In Submission, 2025</p>
+                </div>
+
+                <!-- 2023 Journal Articles -->
+                <div class="pub-item" data-show="true" data-category="journal">
+                    <p class="pub-type">Journal Article</p>
+                    <p class="pub-title">Symmetrical SyncMap for imbalanced general chunking problems</p>
+                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">Physica D: Nonlinear Phenomena (Top 6%/9% in Mathematics/Nonlinear Dynamics),
+                        IF: 3.7, 2023</p>
+                    <div class="pub-links">
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0167278923002774"
+                            target="_blank">Paper Link</a>
+                    </div>
+                </div>
+                <div class="pub-item" data-show="true" data-category="journal">
+                    <p class="pub-type">Journal Article</p>
+                    <p class="pub-title">Magnum: Tackling high-dimensional structures with self-organization</p>
+                    <p class="pub-authors">Mao Po Yuan, Yikfoong Tham, Heng Zhang, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">Neurocomputing (Top 4%/7% in Cognitive Neuroscience/Computer Science), IF: 5.7,
+                        2023</p>
+                    <div class="pub-links">
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0925231223006318"
+                            target="_blank">Paper Link</a>
+                    </div>
+                </div>
+                <div class="pub-item" data-show="true" data-category="review">
+                    <p class="pub-type">Review Article</p>
+                    <p class="pub-title">A survey on reservoir computing and its interdisciplinary applications beyond
+                        traditional machine learning</p>
+                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">IEEE Access (Top 8% in General Engineering), IF: 3.5, 2023 — 60+ citations </p>
+                    <div class="pub-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10196105/" target="_blank">Paper Link</a>
+                    </div>
+                </div>
+
+                <!-- 2022 Conference -->
+                <div class="pub-item" data-show="true" data-category="conference">
+                    <p class="pub-type">Conference</p>
+                    <p class="pub-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A
+                        Space-time Analysis</p>
+                    <p class="pub-authors">Heng Zhang, Danilo Vasconcellos Vargas</p>
+                    <p class="pub-venue">5th Artificial Intelligence and Cloud Computing Conference (AICCC), Osaka, 2022
+                    </p>
+                    <div class="pub-links">
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3582099.3582102" target="_blank">Paper Link</a>
+                    </div>
+                </div>
+
+                <!-- 2020 Conference -->
+                <div class="pub-item" data-show="true" data-category="conference">
+                    <p class="pub-type">Conference</p>
+                    <p class="pub-title">Comparison of Disturbance Rejection Performance between Three Types of UAV
+                        Linear Controllers</p>
+                    <p class="pub-authors">Chao Huang, Heng Zhang</p>
+                    <p class="pub-venue">2020 7th International Conference on Information Science and Control
+                        Engineering (ICISCE), IEEE, 2020</p>
+                    <div class="pub-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/9532379/" target="_blank">Paper Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="presentations">
+        <div class="container">
+            <span class="section-label">Talks &amp; Posters</span>
+            <h2>Presentations</h2>
+
+            <div class="pres-list">
+                <!-- Presentations listed from newest to oldest -->
+                <div class="pres-item">
+                    <span class="pres-badge">Poster</span>
+                    <p class="pres-title">Noise-Driven Internal Simulation Facilitates Learning of Low-Probability Events in Predictive Neural Networks</p>
+                    <p class="pres-meta">NEURO2026, the 49th Annual Meeting of the Japan Neuroscience Society (Poster 3P-465), Kobe Convention Center, Kobe, Japan, August 1, 2026</p>
+                </div>
+                <div class="pres-item">
+                    <span class="pres-badge">Talk</span>
+                    <p class="pres-title">Internal Simulation with Noise and Rare Events</p>
+                    <p class="pres-meta">IRCN Team Salon Talk, IRCN, The University of Tokyo, Japan, May 27, 2026</p>
+                </div>
+                <div class="pres-item">
+                    <span class="pres-badge">Poster</span>
+                    <p class="pres-title">Noise-Enhanced Replay Facilitates Learning of Rare Event and Temporal Correlations in Brain-like Neural Network</p>
+                    <p class="pres-meta">The Third IRCN International Joint Symposium (IRCN-NTU), Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore, February 3, 2026</p>
+                </div>
+                <div class="pres-item">
+                    <span class="pres-badge">Talk</span>
+                    <p class="pres-title">Bio-inspired Hybrid Predictive Model for Robust Visual Scene Understanding</p>
+                    <p class="pres-meta">IRCN Retreat, Odawara, Japan, October 23, 2025</p>
+                </div>
+                <div class="pres-item">
+                    <span class="pres-badge">Talk</span>
+                    <p class="pres-title">Introduction to Robust and Adaptive AI Paradigm</p>
+                    <p class="pres-meta">AI Incubator Salon Talk, IRCN, The University of Tokyo, Japan, October 18, 2025</p>
+                </div>
+                <div class="pres-item">
+                    <span class="pres-badge">Poster</span>
+                    <p class="pres-title">Spatial Relativity: Robust AI for Approximate Computing</p>
+                    <p class="pres-meta">Second Open Symposium on Photonic Computing, NICT, Koganei, Japan, December 17, 2024</p>
+                </div>
+                <div class="pres-item">
+                    <span class="pres-badge">Talk</span>
+                    <p class="pres-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A Space-time Analysis</p>
+                    <p class="pres-meta">5th Artificial Intelligence and Cloud Computing Conference (AICCC), Osaka, Japan, December 17, 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="funding" class="funding">
+        <div class="container">
+            <span class="section-label">Funding</span>
+            <h2>External Funding Contributions</h2>
+            <div class="funding-list">
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">UTokyo Global Activity Support Program for Young Researchers • 2026–2027</p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">UTokyo Global Activity Support Program for Young Researchers • 2026–2027</p>
+                        <p class="funding-meta">International research dispatch support to develop global networks and international capabilities through overseas research activities</p>
+                        <p class="funding-amount">¥570,000 • Awardee</p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">WPI-IRCN Retreat Brainstorming Awards, UTokyo • 2025–2026</p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">WPI-IRCN Retreat Brainstorming Awards, UTokyo • 2025–2026</p>
+                        <p class="funding-meta">Intrinsic functionalities of biological networks with multi-reservoir
+                            systems</p>
+                        <p class="funding-amount">¥800,000 • Co-Investigator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">The Telecommunications Advancement Foundation • 2025–2026</p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">The Telecommunications Advancement Foundation • 2025–2026</p>
+                        <p class="funding-meta">Improving AI security by developing unsupervised, robust, and adaptive
+                            AI systems</p>
+                        <p class="funding-amount">¥2,105,000 • Co-Investigator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) •
+                            2022–2026</p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">JSPS, MEXT Grant-in-Aid for Transformative Research Areas (A) •
+                            2022–2026</p>
+                        <p class="funding-meta">Creation of photonic computing utilizing the ultimate performance of
+                            light</p>
+                        <p class="funding-amount">¥20,000,000 • Research Collaborator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">Leading Company • 2023–2025</p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">Leading Company • 2023–2025</p>
+                        <p class="funding-meta">Small anomaly detection algorithm for autonomous driving based on
+                            Inpainting</p>
+                        <p class="funding-amount">¥15,000,000 • Research Collaborator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023
+                        </p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">JSPS, Grant in Aid for Challenging Research (Exploratory) • 2022–2023
+                        </p>
+                        <p class="funding-meta">Learning based on Self-Organization - Pioneering a Novel Foundation for
+                            AI</p>
+                        <p class="funding-amount">¥5,000,000 • Major Research Collaborator</p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+                <div class="funding-item" data-expanded="false">
+                    <div class="funding-collapsed">
+                        <p class="funding-short">Japan Science and Technology Agency (JST) • 2021–2024</p>
+                        <p class="funding-read-more"><a href="#" class="read-more"
+                                onclick="toggleFunding(event, this)">Read more</a></p>
+                    </div>
+                    <div class="funding-full" style="display: none;">
+                        <p class="funding-grant">Japan Science and Technology Agency (JST) • 2021–2024</p>
+                        <p class="funding-meta">Support for Pioneering Research Initiated by the Next Generation
+                            (SPRING)</p>
+                        <p class="funding-amount">¥8,500,000 • Highly-selected Student</p>
+                        <p class="funding-read-more"><a href="#" class="read-less"
+                                onclick="toggleFunding(event, this)">Show less</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <span class="section-label">Contact</span>
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-item-label">Location</span>
+                        International Research Center for Neurointelligence (IRCN)<br>
+                        The University of Tokyo<br>
+                        7-3-1 Hongo, Bunkyo-ku, Tokyo, Japan 113-0033
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-label">Email</span>
+                        rogerzhangheng [at] gmail [dot] com
+                    </div>
+                    <!--                    <div class="contact-item">-->
+                    <!--                        <span class="contact-item-label">Phone</span>-->
+                    <!--                        (+81)090-2341-7951-->
+                    <!--                    </div>-->
+                </div>
+                <div class="map-container">
+                    <!--                    <iframe-->
+                    <!--                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9282167891844!2d139.76183207589758!3d35.70996247257882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c2ffa206ea3%3A0x30e407498313ba95!2sUniversity%20of%20Tokyo!5e0!3m2!1sen!2sjp!4v1705000000000!5m2!1sen!2sjp"-->
+                    <!--                        allowfullscreen=""-->
+                    <!--                        loading="lazy"-->
+                    <!--                        referrerpolicy="no-referrer-when-downgrade">-->
+                    <!--                    </iframe>-->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.670348133987!2d139.75920227649402!3d35.709728972577935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3ad96a6241%3A0x34fe6ab8a94a4aba!2sIRCN!5e0!3m2!1sen!2sjp!4v1768922743233!5m2!1sen!2sjp"
+                        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://github.com/Roger2148" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ"
+                        target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Heng Zhang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo">
+        <figure style="margin:0;display:contents"><img src="" alt=""><figcaption></figcaption></figure>
+    </div>
+    <script src="assets/site.js"></script>
+</body>
+
+</html>

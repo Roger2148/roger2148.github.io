@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Organizing Dynamical Equations (SODE) | Heng Zhang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body id="top">
+    <header>
+        <nav class="container">
+            <a href="index.html" class="nav-logo">Heng Zhang</a>
+            <div class="nav"><div class="nav__group"><a class="nav__item" href="index.html" aria-haspopup="true">About me<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="index.html#top"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Hero</span><span class="nav-menu__sub">Who I am, at a glance</span></span></a></li><li><a href="index.html#about"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">Background</span><span class="nav-menu__sub">Bio and skills</span></span></a></li><li><a href="index.html#experience"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Professional Experience</span><span class="nav-menu__sub">Positions held</span></span></a></li><li><a href="index.html#education"><span class="nav-menu__num">04</span><span><span class="nav-menu__label">Academic Background</span><span class="nav-menu__sub">Degrees and theses</span></span></a></li><li><a href="index.html#more"><span class="nav-menu__num">05</span><span><span class="nav-menu__label">Additional Information</span><span class="nav-menu__sub">Languages and teaching</span></span></a></li><li><a href="index.html#contact"><span class="nav-menu__num">06</span><span><span class="nav-menu__label">Get in Touch</span><span class="nav-menu__sub">Email and profiles</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="research.html" aria-haspopup="true">As a Researcher<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="research.html#activities"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Activities</span><span class="nav-menu__sub">Posters and talks in pictures</span></span></a></li><li><a href="research.html#research"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">Research Interests</span><span class="nav-menu__sub">Current directions</span></span></a></li><li><a href="research.html#publications"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Selected Works</span><span class="nav-menu__sub">Papers by category</span></span></a></li><li><a href="research.html#presentations"><span class="nav-menu__num">04</span><span><span class="nav-menu__label">Presentations</span><span class="nav-menu__sub">Talks and posters</span></span></a></li><li><a href="research.html#funding"><span class="nav-menu__num">05</span><span><span class="nav-menu__label">Funding</span><span class="nav-menu__sub">Grants and awards</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="developer.html" aria-haspopup="true">As a Developer<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="developer.html#olden-flames"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Olden Flames</span><span class="nav-menu__sub">Open-world action game · MiraiX</span></span></a></li><li><a href="developer.html#syncmapv2"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">SyncMapV2 in Unreal Engine</span><span class="nav-menu__sub">A paper as a walkable 3D scene</span></span></a></li><li><a href="developer.html#japanese-teacher"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Japanese Speaking Teacher</span><span class="nav-menu__sub">Local AI speaking practice</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="music.html" aria-haspopup="true">As a Music Lover<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="music.html#music"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Piano & voice</span><span class="nav-menu__sub">Fujii Kaze covers, now playing</span></span></a></li><li><a href="music.html#covers"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">The playlist</span><span class="nav-menu__sub">All 17 covers on Bilibili</span></span></a></li><li><a href="music.html#artists"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Favorite artists</span><span class="nav-menu__sub">Who I keep coming back to</span></span></a></li></ul></div></div><a class="nav__item" href="#contact">Contact</a></div>
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="nav-mobile"><div class="nav-mobile__group"><a class="nav-mobile__title" href="index.html">About me</a><a href="index.html#top" onclick="toggleMenu()">Hero</a><a href="index.html#about" onclick="toggleMenu()">Background</a><a href="index.html#experience" onclick="toggleMenu()">Professional Experience</a><a href="index.html#education" onclick="toggleMenu()">Academic Background</a><a href="index.html#more" onclick="toggleMenu()">Additional Information</a><a href="index.html#contact" onclick="toggleMenu()">Get in Touch</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="research.html">As a Researcher</a><a href="research.html#activities" onclick="toggleMenu()">Activities</a><a href="research.html#research" onclick="toggleMenu()">Research Interests</a><a href="research.html#publications" onclick="toggleMenu()">Selected Works</a><a href="research.html#presentations" onclick="toggleMenu()">Presentations</a><a href="research.html#funding" onclick="toggleMenu()">Funding</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="developer.html">As a Developer</a><a href="developer.html#olden-flames" onclick="toggleMenu()">Olden Flames</a><a href="developer.html#syncmapv2" onclick="toggleMenu()">SyncMapV2 in Unreal Engine</a><a href="developer.html#japanese-teacher" onclick="toggleMenu()">Japanese Speaking Teacher</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="music.html">As a Music Lover</a><a href="music.html#music" onclick="toggleMenu()">Piano & voice</a><a href="music.html#covers" onclick="toggleMenu()">The playlist</a><a href="music.html#artists" onclick="toggleMenu()">Favorite artists</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="#contact" onclick="toggleMenu()">Contact</a></div></div>
+    </header>
+
+    <section id="topic" class="first-section" data-static>
+        <div class="container">
+            <a class="topic-back" href="research.html#research">&larr; Research interests</a>
+            <span class="section-label">Research topic</span>
+            <h1>Self-Organizing Dynamical Equations (SODE)</h1>
+            <p class="topic-para">Bio-inspired systems that leverage self-organization and nonlinear dynamical principles for complex sequential learning. SODE employs attractor–repeller dynamics driven by Hebbian and anti-Hebbian rules, so that temporal structure in an input stream is chunked and represented without an objective function or back-propagation. The framework is robust to imbalanced and hierarchical structure and adapts online as the world changes.</p>
+            <div class="topic-media topic-media--rows">
+                <figure class="topic-media__item">
+                    <video controls preload="metadata" playsinline poster="assets/video/syncmap_anim.jpg"><source src="assets/video/syncmap_anim.mp4" type="video/mp4"></video>
+                    <figcaption>SyncMap: self-organizing chunking of a temporal stream</figcaption>
+                </figure>
+                <figure class="topic-media__item">
+                    <video controls preload="metadata" playsinline poster="assets/video/sode.jpg"><source src="assets/video/sode.mp4" type="video/mp4"></video>
+                    <figcaption>SODE dynamics</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section id="related" data-static>
+        <div class="container">
+            <span class="section-label">Links to related works</span>
+            <h2>Related works</h2>
+            <div class="pres-list">
+                <a class="pres-item topic-work" href="research.html#publications">
+                    <span class="pres-badge">Paper</span>
+                    <p class="pres-title">Symmetrical SyncMap for imbalanced general chunking problems</p>
+                    <p class="pres-meta">Physica D, 2023</p>
+                </a>
+                <a class="pres-item topic-work" href="research.html#publications">
+                    <span class="pres-badge">Paper</span>
+                    <p class="pres-title">Self-Organizing to Learn Dynamical Hierarchies</p>
+                    <p class="pres-meta">Scientific Reports, under review</p>
+                </a>
+                <a class="pres-item topic-work" href="research.html#publications">
+                    <span class="pres-badge">Paper</span>
+                    <p class="pres-title">Magnum: Tackling high-dimensional structures with self-organization</p>
+                    <p class="pres-meta">Neurocomputing, 2023</p>
+                </a>
+                <a class="pres-item topic-work" href="research.html#presentations">
+                    <span class="pres-badge">Talk</span>
+                    <p class="pres-title">Understanding SyncMap's Dynamics and Its Self-organization Properties: A Space-time Analysis</p>
+                    <p class="pres-meta">Talk · AICCC 2022, Osaka</p>
+                </a>
+                <a class="pres-item topic-work" href="research.html#presentations">
+                    <span class="pres-badge">Poster</span>
+                    <p class="pres-title">Spatial Relativity: Robust AI for Approximate Computing</p>
+                    <p class="pres-meta">Poster · Photonic Computing Symposium, NICT, 2024</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <span class="section-label">Contact</span>
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-item-label">Location</span>
+                        International Research Center for Neurointelligence (IRCN)<br>
+                        The University of Tokyo<br>
+                        7-3-1 Hongo, Bunkyo-ku, Tokyo, Japan 113-0033
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-label">Email</span>
+                        rogerzhangheng [at] gmail [dot] com
+                    </div>
+                    <!--                    <div class="contact-item">-->
+                    <!--                        <span class="contact-item-label">Phone</span>-->
+                    <!--                        (+81)090-2341-7951-->
+                    <!--                    </div>-->
+                </div>
+                <div class="map-container">
+                    <!--                    <iframe-->
+                    <!--                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9282167891844!2d139.76183207589758!3d35.70996247257882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c2ffa206ea3%3A0x30e407498313ba95!2sUniversity%20of%20Tokyo!5e0!3m2!1sen!2sjp!4v1705000000000!5m2!1sen!2sjp"-->
+                    <!--                        allowfullscreen=""-->
+                    <!--                        loading="lazy"-->
+                    <!--                        referrerpolicy="no-referrer-when-downgrade">-->
+                    <!--                    </iframe>-->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.670348133987!2d139.75920227649402!3d35.709728972577935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3ad96a6241%3A0x34fe6ab8a94a4aba!2sIRCN!5e0!3m2!1sen!2sjp!4v1768922743233!5m2!1sen!2sjp"
+                        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://github.com/Roger2148" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ"
+                        target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Heng Zhang. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/site.js"></script>
+</body>
+
+</html>

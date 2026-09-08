@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer | Heng Zhang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body id="top">
+    <header>
+        <nav class="container">
+            <a href="index.html" class="nav-logo">Heng Zhang</a>
+            <div class="nav"><div class="nav__group"><a class="nav__item" href="index.html" aria-haspopup="true">About me<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="index.html#top"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Hero</span><span class="nav-menu__sub">Who I am, at a glance</span></span></a></li><li><a href="index.html#about"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">Background</span><span class="nav-menu__sub">Bio and skills</span></span></a></li><li><a href="index.html#experience"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Professional Experience</span><span class="nav-menu__sub">Positions held</span></span></a></li><li><a href="index.html#education"><span class="nav-menu__num">04</span><span><span class="nav-menu__label">Academic Background</span><span class="nav-menu__sub">Degrees and theses</span></span></a></li><li><a href="index.html#more"><span class="nav-menu__num">05</span><span><span class="nav-menu__label">Additional Information</span><span class="nav-menu__sub">Languages and teaching</span></span></a></li><li><a href="index.html#contact"><span class="nav-menu__num">06</span><span><span class="nav-menu__label">Get in Touch</span><span class="nav-menu__sub">Email and profiles</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="research.html" aria-haspopup="true">As a Researcher<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="research.html#activities"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Activities</span><span class="nav-menu__sub">Posters and talks in pictures</span></span></a></li><li><a href="research.html#research"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">Research Interests</span><span class="nav-menu__sub">Current directions</span></span></a></li><li><a href="research.html#publications"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Selected Works</span><span class="nav-menu__sub">Papers by category</span></span></a></li><li><a href="research.html#presentations"><span class="nav-menu__num">04</span><span><span class="nav-menu__label">Presentations</span><span class="nav-menu__sub">Talks and posters</span></span></a></li><li><a href="research.html#funding"><span class="nav-menu__num">05</span><span><span class="nav-menu__label">Funding</span><span class="nav-menu__sub">Grants and awards</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="developer.html" aria-haspopup="true">As a Developer<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="developer.html#olden-flames"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Olden Flames</span><span class="nav-menu__sub">Open-world action game · MiraiX</span></span></a></li><li><a href="developer.html#syncmapv2"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">SyncMapV2 in Unreal Engine</span><span class="nav-menu__sub">A paper as a walkable 3D scene</span></span></a></li><li><a href="developer.html#japanese-teacher"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Japanese Speaking Teacher</span><span class="nav-menu__sub">Local AI speaking practice</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="music.html" aria-haspopup="true">As a Music Lover<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="music.html#music"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Piano & voice</span><span class="nav-menu__sub">Fujii Kaze covers, now playing</span></span></a></li><li><a href="music.html#covers"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">The playlist</span><span class="nav-menu__sub">All 17 covers on Bilibili</span></span></a></li><li><a href="music.html#artists"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Favorite artists</span><span class="nav-menu__sub">Who I keep coming back to</span></span></a></li></ul></div></div><a class="nav__item" href="#contact">Contact</a></div>
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="nav-mobile"><div class="nav-mobile__group"><a class="nav-mobile__title" href="index.html">About me</a><a href="index.html#top" onclick="toggleMenu()">Hero</a><a href="index.html#about" onclick="toggleMenu()">Background</a><a href="index.html#experience" onclick="toggleMenu()">Professional Experience</a><a href="index.html#education" onclick="toggleMenu()">Academic Background</a><a href="index.html#more" onclick="toggleMenu()">Additional Information</a><a href="index.html#contact" onclick="toggleMenu()">Get in Touch</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="research.html">As a Researcher</a><a href="research.html#activities" onclick="toggleMenu()">Activities</a><a href="research.html#research" onclick="toggleMenu()">Research Interests</a><a href="research.html#publications" onclick="toggleMenu()">Selected Works</a><a href="research.html#presentations" onclick="toggleMenu()">Presentations</a><a href="research.html#funding" onclick="toggleMenu()">Funding</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="developer.html">As a Developer</a><a href="developer.html#olden-flames" onclick="toggleMenu()">Olden Flames</a><a href="developer.html#syncmapv2" onclick="toggleMenu()">SyncMapV2 in Unreal Engine</a><a href="developer.html#japanese-teacher" onclick="toggleMenu()">Japanese Speaking Teacher</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="music.html">As a Music Lover</a><a href="music.html#music" onclick="toggleMenu()">Piano & voice</a><a href="music.html#covers" onclick="toggleMenu()">The playlist</a><a href="music.html#artists" onclick="toggleMenu()">Favorite artists</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="#contact" onclick="toggleMenu()">Contact</a></div></div>
+    </header>
+
+    <section id="projects" class="first-section" data-static>
+        <div class="container">
+            <span class="section-label">As a Developer</span>
+            <h2>Projects</h2>
+            <p class="dev-lede">Things I build outside the lab, and the research code that grew into something you can run.</p>
+
+            <div class="dev-list">
+                <article class="dev-project" id="olden-flames">
+                    <div class="dev-media">
+                        <div class="yt-lite" data-yt="KfV_sMWXr-I" data-title="He Hunts Giants… Until the Dragon Appears | Olden Flames">
+                            <img src="assets/dev/olden_flames_thumb.jpg" alt="Olden Flames trailer thumbnail" loading="lazy">
+                            <button type="button" class="yt-lite__play" aria-label="Play trailer"><svg viewBox="0 0 68 48" aria-hidden="true"><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.4 0 34 0 34 0S12.6 0 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.6 48 34 48 34 48s21.4 0 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg></button>
+                        </div>
+                        <p class="dev-media__caption">Trailer: “He Hunts Giants… Until the Dragon Appears”. Loads from YouTube when you press play.</p>
+                    </div>
+                    <div class="dev-content">
+                        <p class="activity-kicker">Game · MiraiX</p>
+                        <h3>Olden Flames</h3>
+                        <p class="dev-meta">My role: UI &amp; VFX designer · atmospheric open-world action game · in development</p>
+                        <p>I design the interface and the visual effects for Olden Flames at MiraiX: the HUD and menus you see on screen, and the fire, magic and impact effects you see in the world. The trailer above shows both in action.</p>
+                        <div class="dev-links">
+                            <a href="https://miraix.org" target="_blank" rel="noopener">miraix.org &nearr;</a>
+                            <a href="https://www.youtube.com/@oldenflames" target="_blank" rel="noopener">YouTube channel &nearr;</a>
+                            <a href="https://discord.com/invite/HeVt3eDBEe" target="_blank" rel="noopener">Discord &nearr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="dev-project" id="syncmapv2">
+                    <div class="dev-media">
+                        <video controls preload="metadata" playsinline poster="assets/video/syncmap_v2_ue.jpg"><source src="assets/video/syncmap_v2_ue.mp4" type="video/mp4"></video>
+                        <p class="dev-media__caption">The paper as a walkable exhibition in Unreal Engine: figures on the walls, the dynamics in the room.</p>
+                    </div>
+                    <div class="dev-content">
+                        <p class="activity-kicker">Unreal Engine · Research demo</p>
+                        <h3>SyncMapV2 in Unreal Engine</h3>
+                        <p class="dev-meta">My role: concept, level design and build · Unreal Engine 5</p>
+                        <p>I turned my own paper into a walkable level: figures on the walls, the dynamics running in the room, a character guiding you through. Probably one of the first ML papers presented this way.</p>
+                        <div class="dev-links">
+                            <a href="topic-vision.html">Research topic &rarr;</a>
+                            <a href="research.html#publications">Paper (under review) &rarr;</a>
+                        </div>
+                        <ul class="dev-tags"><li>Unreal Engine 5</li><li>Blueprints</li><li>Science communication</li><li>Python</li><li>Segmentation</li></ul>
+                    </div>
+                </article>
+
+                <article class="dev-project" id="japanese-teacher">
+                    <div class="dev-media">
+                        <video controls preload="metadata" playsinline poster="assets/dev/jst_demo.jpg"><source src="assets/dev/jst_demo.mp4" type="video/mp4"></video>
+                        <p class="dev-media__caption">Speak, get corrected, hear the reply. Everything runs on the local machine.</p>
+                    </div>
+                    <div class="dev-content">
+                        <p class="activity-kicker">Open source · Local AI app</p>
+                        <h3>Japanese Speaking Teacher</h3>
+                        <p class="dev-meta">Self-hosted speaking practice over LAN or Tailscale · alpha</p>
+                        <p>You talk in Japanese or English, the app transcribes it, a local language model answers as a tutor with corrections, and the reply is spoken back. Topic starters, adjustable correction intensity, saved history, works from a phone on the home network. No cloud, no API keys.</p>
+                        <div class="dev-links">
+                            <a href="https://github.com/Roger2148/JapaneseSpeakingTeacher" target="_blank" rel="noopener">GitHub &nearr;</a>
+                        </div>
+                        <ul class="dev-tags"><li>React</li><li>TypeScript</li><li>FastAPI</li><li>WebSocket</li><li>faster-whisper</li><li>Ollama</li><li>TTS</li></ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <span class="section-label">Contact</span>
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-item-label">Location</span>
+                        International Research Center for Neurointelligence (IRCN)<br>
+                        The University of Tokyo<br>
+                        7-3-1 Hongo, Bunkyo-ku, Tokyo, Japan 113-0033
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-label">Email</span>
+                        rogerzhangheng [at] gmail [dot] com
+                    </div>
+                    <!--                    <div class="contact-item">-->
+                    <!--                        <span class="contact-item-label">Phone</span>-->
+                    <!--                        (+81)090-2341-7951-->
+                    <!--                    </div>-->
+                </div>
+                <div class="map-container">
+                    <!--                    <iframe-->
+                    <!--                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9282167891844!2d139.76183207589758!3d35.70996247257882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c2ffa206ea3%3A0x30e407498313ba95!2sUniversity%20of%20Tokyo!5e0!3m2!1sen!2sjp!4v1705000000000!5m2!1sen!2sjp"-->
+                    <!--                        allowfullscreen=""-->
+                    <!--                        loading="lazy"-->
+                    <!--                        referrerpolicy="no-referrer-when-downgrade">-->
+                    <!--                    </iframe>-->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.670348133987!2d139.75920227649402!3d35.709728972577935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3ad96a6241%3A0x34fe6ab8a94a4aba!2sIRCN!5e0!3m2!1sen!2sjp!4v1768922743233!5m2!1sen!2sjp"
+                        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://github.com/Roger2148" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ"
+                        target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Heng Zhang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/site.js"></script>
+</body>
+
+</html>

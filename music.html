@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Heng Zhang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body id="top">
+    <header>
+        <nav class="container">
+            <a href="index.html" class="nav-logo">Heng Zhang</a>
+            <div class="nav"><div class="nav__group"><a class="nav__item" href="index.html" aria-haspopup="true">About me<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="index.html#top"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Hero</span><span class="nav-menu__sub">Who I am, at a glance</span></span></a></li><li><a href="index.html#about"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">Background</span><span class="nav-menu__sub">Bio and skills</span></span></a></li><li><a href="index.html#experience"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Professional Experience</span><span class="nav-menu__sub">Positions held</span></span></a></li><li><a href="index.html#education"><span class="nav-menu__num">04</span><span><span class="nav-menu__label">Academic Background</span><span class="nav-menu__sub">Degrees and theses</span></span></a></li><li><a href="index.html#more"><span class="nav-menu__num">05</span><span><span class="nav-menu__label">Additional Information</span><span class="nav-menu__sub">Languages and teaching</span></span></a></li><li><a href="index.html#contact"><span class="nav-menu__num">06</span><span><span class="nav-menu__label">Get in Touch</span><span class="nav-menu__sub">Email and profiles</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="research.html" aria-haspopup="true">As a Researcher<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="research.html#activities"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Activities</span><span class="nav-menu__sub">Posters and talks in pictures</span></span></a></li><li><a href="research.html#research"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">Research Interests</span><span class="nav-menu__sub">Current directions</span></span></a></li><li><a href="research.html#publications"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Selected Works</span><span class="nav-menu__sub">Papers by category</span></span></a></li><li><a href="research.html#presentations"><span class="nav-menu__num">04</span><span><span class="nav-menu__label">Presentations</span><span class="nav-menu__sub">Talks and posters</span></span></a></li><li><a href="research.html#funding"><span class="nav-menu__num">05</span><span><span class="nav-menu__label">Funding</span><span class="nav-menu__sub">Grants and awards</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="developer.html" aria-haspopup="true">As a Developer<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="developer.html#olden-flames"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Olden Flames</span><span class="nav-menu__sub">Open-world action game · MiraiX</span></span></a></li><li><a href="developer.html#syncmapv2"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">SyncMapV2 in Unreal Engine</span><span class="nav-menu__sub">A paper as a walkable 3D scene</span></span></a></li><li><a href="developer.html#japanese-teacher"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Japanese Speaking Teacher</span><span class="nav-menu__sub">Local AI speaking practice</span></span></a></li></ul></div></div><div class="nav__group"><a class="nav__item" href="music.html" aria-haspopup="true">As a Music Lover<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-menu"><ul><li><a href="music.html#music"><span class="nav-menu__num">01</span><span><span class="nav-menu__label">Piano & voice</span><span class="nav-menu__sub">Fujii Kaze covers, now playing</span></span></a></li><li><a href="music.html#covers"><span class="nav-menu__num">02</span><span><span class="nav-menu__label">The playlist</span><span class="nav-menu__sub">All 17 covers on Bilibili</span></span></a></li><li><a href="music.html#artists"><span class="nav-menu__num">03</span><span><span class="nav-menu__label">Favorite artists</span><span class="nav-menu__sub">Who I keep coming back to</span></span></a></li></ul></div></div><a class="nav__item" href="#contact">Contact</a></div>
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="nav-mobile"><div class="nav-mobile__group"><a class="nav-mobile__title" href="index.html">About me</a><a href="index.html#top" onclick="toggleMenu()">Hero</a><a href="index.html#about" onclick="toggleMenu()">Background</a><a href="index.html#experience" onclick="toggleMenu()">Professional Experience</a><a href="index.html#education" onclick="toggleMenu()">Academic Background</a><a href="index.html#more" onclick="toggleMenu()">Additional Information</a><a href="index.html#contact" onclick="toggleMenu()">Get in Touch</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="research.html">As a Researcher</a><a href="research.html#activities" onclick="toggleMenu()">Activities</a><a href="research.html#research" onclick="toggleMenu()">Research Interests</a><a href="research.html#publications" onclick="toggleMenu()">Selected Works</a><a href="research.html#presentations" onclick="toggleMenu()">Presentations</a><a href="research.html#funding" onclick="toggleMenu()">Funding</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="developer.html">As a Developer</a><a href="developer.html#olden-flames" onclick="toggleMenu()">Olden Flames</a><a href="developer.html#syncmapv2" onclick="toggleMenu()">SyncMapV2 in Unreal Engine</a><a href="developer.html#japanese-teacher" onclick="toggleMenu()">Japanese Speaking Teacher</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="music.html">As a Music Lover</a><a href="music.html#music" onclick="toggleMenu()">Piano & voice</a><a href="music.html#covers" onclick="toggleMenu()">The playlist</a><a href="music.html#artists" onclick="toggleMenu()">Favorite artists</a></div><div class="nav-mobile__group"><a class="nav-mobile__title" href="#contact" onclick="toggleMenu()">Contact</a></div></div>
+    </header>
+
+    <section id="music" class="first-section" data-static>
+        <div class="container">
+            <span class="section-label">As a Music Lover</span>
+            <h2>Piano &amp; voice</h2>
+            <p class="music-lede">Fujii Kaze songs, played and sung at home on a digital piano. 17 covers so far, all on Bilibili.
+                <a class="music-channel" href="https://space.bilibili.com/26533739" target="_blank" rel="noopener"><img src="assets/music/avatar.jpg" alt="" width="22" height="22">Pikaaaaaaachu on Bilibili &nearr;</a></p>
+
+            <div class="music-stage">
+                <div class="bili-lite" id="bili-stage" data-bvid="BV1Ay7a65E1P">
+                    <img src="assets/music/BV1Ay7a65E1P.jpg" alt="" id="bili-cover">
+                    <button type="button" class="bili-lite__play" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.55)"/><path d="M9.5 7.5v9l7-4.5z" fill="#fff"/></svg></button>
+                </div>
+                <div class="music-now">
+                    <p class="activity-kicker">Now playing</p>
+                    <h3 id="bili-title">青春病</h3>
+                    <p class="music-now__meta" id="bili-meta">Jun 2026 · 5:46 · 760 views</p>
+                    <p class="music-now__hint">Pick any cover below to play it here. The player streams from Bilibili, so it is fast in China and a little slower elsewhere.</p>
+                    <a class="music-now__link" id="bili-link" href="https://www.bilibili.com/video/BV1Ay7a65E1P" target="_blank" rel="noopener">Watch on Bilibili &nearr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="covers" data-static>
+        <div class="container">
+            <span class="section-label">All covers</span>
+            <h2>The playlist</h2>
+            <div class="music-grid">
+                <button type="button" class="music-tile" data-bvid="BV16Fgq6PEzF" data-name="特にない" data-sub="" data-date="Jul 2026" data-dur="3:22" data-views="325" title="特にない　藤井風">
+                    <span class="music-tile__cover"><img src="assets/music/BV16Fgq6PEzF.jpg" alt="" loading="lazy"><span class="music-tile__dur">3:22</span></span>
+                    <span class="music-tile__name">特にない</span>
+                    <span class="music-tile__meta">Jul 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1zEMg6JEFF" data-name="それでは" data-sub="" data-date="Jul 2026" data-dur="4:08" data-views="401" title="それでは　Fujii Kaze　弾き語り">
+                    <span class="music-tile__cover"><img src="assets/music/BV1zEMg6JEFF.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:08</span></span>
+                    <span class="music-tile__name">それでは</span>
+                    <span class="music-tile__meta">Jul 2026</span>
+                </button>
+                <button type="button" class="music-tile is-current" data-bvid="BV1Ay7a65E1P" data-name="青春病" data-sub="" data-date="Jun 2026" data-dur="5:46" data-views="760" title="【青春病】 藤井风 钢琴 弹唱">
+                    <span class="music-tile__cover"><img src="assets/music/BV1Ay7a65E1P.jpg" alt="" loading="lazy"><span class="music-tile__dur">5:46</span></span>
+                    <span class="music-tile__name">青春病</span>
+                    <span class="music-tile__meta">Jun 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1VJLS6qEwY" data-name="風よ" data-sub="" data-date="May 2026" data-dur="4:47" data-views="1208" title="「風よ」　藤井風　弾き語り">
+                    <span class="music-tile__cover"><img src="assets/music/BV1VJLS6qEwY.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:47</span></span>
+                    <span class="music-tile__name">風よ</span>
+                    <span class="music-tile__meta">May 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV12V5g65ENu" data-name="Grace" data-sub="" data-date="May 2026" data-dur="4:48" data-views="461" title="Grace [Fujii Kaze] 弹唱">
+                    <span class="music-tile__cover"><img src="assets/music/BV12V5g65ENu.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:48</span></span>
+                    <span class="music-tile__name">Grace</span>
+                    <span class="music-tile__meta">May 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV12D9xBQEi1" data-name="帰ろう" data-sub="" data-date="Apr 2026" data-dur="5:38" data-views="758" title="「帰ろう」　（乘风归去）藤井風 弹唱">
+                    <span class="music-tile__cover"><img src="assets/music/BV12D9xBQEi1.jpg" alt="" loading="lazy"><span class="music-tile__dur">5:38</span></span>
+                    <span class="music-tile__name">帰ろう</span>
+                    <span class="music-tile__meta">Apr 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV18BdVBFEav" data-name="真っ白" data-sub="" data-date="Apr 2026" data-dur="4:43" data-views="664" title="「真っ白」藤井風 （弹唱）">
+                    <span class="music-tile__cover"><img src="assets/music/BV18BdVBFEav.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:43</span></span>
+                    <span class="music-tile__name">真っ白</span>
+                    <span class="music-tile__meta">Apr 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1Xqw3zCE4x" data-name="花" data-sub="Ballad ver." data-date="Mar 2026" data-dur="4:08" data-views="503" title="「花」Ballad Ver. 藤井風">
+                    <span class="music-tile__cover"><img src="assets/music/BV1Xqw3zCE4x.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:08</span></span>
+                    <span class="music-tile__name">花</span>
+                    <span class="music-tile__meta">Ballad ver. · Mar 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV16VPMznEdb" data-name="花" data-sub="" data-date="Mar 2026" data-dur="3:47" data-views="470" title="「花」　藤井風">
+                    <span class="music-tile__cover"><img src="assets/music/BV16VPMznEdb.jpg" alt="" loading="lazy"><span class="music-tile__dur">3:47</span></span>
+                    <span class="music-tile__name">花</span>
+                    <span class="music-tile__meta">Mar 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1qmZKBoEvY" data-name="Love like this" data-sub="" data-date="Feb 2026" data-dur="4:15" data-views="344" title="Love like this (Fujii Kaze) 弹唱">
+                    <span class="music-tile__cover"><img src="assets/music/BV1qmZKBoEvY.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:15</span></span>
+                    <span class="music-tile__name">Love like this</span>
+                    <span class="music-tile__meta">Feb 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1viFHzMEwP" data-name="Summer Grace" data-sub="“Feelin’ Good” at Nissan Stadium ver." data-date="Feb 2026" data-dur="3:25" data-views="438" title="『Summer Grace／藤井 風』“Feelin' Good” at NISSAN stadium ver.">
+                    <span class="music-tile__cover"><img src="assets/music/BV1viFHzMEwP.jpg" alt="" loading="lazy"><span class="music-tile__dur">3:25</span></span>
+                    <span class="music-tile__name">Summer Grace</span>
+                    <span class="music-tile__meta">“Feelin’ Good” at Nissan Stadium ver. · Feb 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1qo6vBaEfy" data-name="死ぬのがいいわ" data-sub="" data-date="Jan 2026" data-dur="3:09" data-views="341" title="死ぬのがいいわ">
+                    <span class="music-tile__cover"><img src="assets/music/BV1qo6vBaEfy.jpg" alt="" loading="lazy"><span class="music-tile__dur">3:09</span></span>
+                    <span class="music-tile__name">死ぬのがいいわ</span>
+                    <span class="music-tile__meta">Jan 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1Xoz3BnEgU" data-name="まつり" data-sub="" data-date="Jan 2026" data-dur="4:39" data-views="3038" title="祭典 「まつり」 藤井風　ピアノ弾き語り">
+                    <span class="music-tile__cover"><img src="assets/music/BV1Xoz3BnEgU.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:39</span></span>
+                    <span class="music-tile__name">まつり</span>
+                    <span class="music-tile__meta">Jan 2026</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1K3B6BQE4v" data-name="ガーデン" data-sub="" data-date="Dec 2025" data-dur="4:02" data-views="301" title="ガーデン　藤井風">
+                    <span class="music-tile__cover"><img src="assets/music/BV1K3B6BQE4v.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:02</span></span>
+                    <span class="music-tile__name">ガーデン</span>
+                    <span class="music-tile__meta">Dec 2025</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV1ws2jBPEp2" data-name="満ちてゆく" data-sub="Live at the IRCN welcome party" data-date="Dec 2025" data-dur="6:02" data-views="579" title="東大IRCN迎新会弹唱「満ちてゆく」">
+                    <span class="music-tile__cover"><img src="assets/music/BV1ws2jBPEp2.jpg" alt="" loading="lazy"><span class="music-tile__dur">6:02</span></span>
+                    <span class="music-tile__name">満ちてゆく</span>
+                    <span class="music-tile__meta">Live at the IRCN welcome party · Dec 2025</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV12SxxzNEyF" data-name="帰ろう" data-sub="first take" data-date="Oct 2025" data-dur="4:57" data-views="98" title="帰ろう　藤井風　弾き語り">
+                    <span class="music-tile__cover"><img src="assets/music/BV12SxxzNEyF.jpg" alt="" loading="lazy"><span class="music-tile__dur">4:57</span></span>
+                    <span class="music-tile__name">帰ろう</span>
+                    <span class="music-tile__meta">first take · Oct 2025</span>
+                </button>
+                <button type="button" class="music-tile" data-bvid="BV17KbpzUEu6" data-name="満ちてゆく" data-sub="with the 花 intro" data-date="Aug 2025" data-dur="5:51" data-views="165" title="【満ちてゆく】（【花】前奏+弹唱）">
+                    <span class="music-tile__cover"><img src="assets/music/BV17KbpzUEu6.jpg" alt="" loading="lazy"><span class="music-tile__dur">5:51</span></span>
+                    <span class="music-tile__name">満ちてゆく</span>
+                    <span class="music-tile__meta">with the 花 intro · Aug 2025</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="artists" data-static>
+        <div class="container">
+            <span class="section-rule"></span>
+            <span class="section-label section-label--center">Favorite artists</span>
+            <h2 class="h2--center">Who I keep coming back to</h2>
+            <div class="artists-grid">
+                <a class="artist" href="https://www.youtube.com/@FujiiKaze" target="_blank" rel="noopener">
+                    <span class="artist__photo"><img src="assets/music/artists/fujiikaze.jpg" alt="Fujii Kaze" loading="lazy"></span>
+                    <span class="artist__name">Fujii Kaze<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="artist__jp">藤井 風</span>
+                    <span class="artist__tags">Piano & voice<br>Okayama soul<br>5.5M on YouTube</span>
+                </a>
+                <a class="artist" href="https://www.youtube.com/@tomoo_628" target="_blank" rel="noopener">
+                    <span class="artist__photo"><img src="assets/music/artists/tomoo.jpg" alt="TOMOO" loading="lazy"></span>
+                    <span class="artist__name">TOMOO<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="artist__jp">&nbsp;</span>
+                    <span class="artist__tags">Singer-songwriter<br>Piano ballads<br>295K on YouTube</span>
+                </a>
+                <a class="artist" href="https://www.youtube.com/@hitsujibungaku_official" target="_blank" rel="noopener">
+                    <span class="artist__photo"><img src="assets/music/artists/hitsujibungaku.jpg" alt="Hitsujibungaku" loading="lazy"></span>
+                    <span class="artist__name">Hitsujibungaku<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="artist__jp">羊文学</span>
+                    <span class="artist__tags">Alt-rock trio<br>Shoegaze warmth<br>470K on YouTube</span>
+                </a>
+                <a class="artist" href="https://www.youtube.com/@YUURI_OFFICIAL" target="_blank" rel="noopener">
+                    <span class="artist__photo"><img src="assets/music/artists/yuuri.jpg" alt="Yuuri" loading="lazy"></span>
+                    <span class="artist__name">Yuuri<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="artist__jp">優里</span>
+                    <span class="artist__tags">Singer-songwriter<br>Big ballads<br>1.3M on YouTube</span>
+                </a>
+                <a class="artist" href="https://www.youtube.com/@nbuna" target="_blank" rel="noopener">
+                    <span class="artist__photo"><img src="assets/music/artists/yorushika.jpg" alt="Yorushika" loading="lazy"></span>
+                    <span class="artist__name">Yorushika<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="artist__jp">ヨルシカ</span>
+                    <span class="artist__tags">n-buna & suis<br>Literary pop<br>4.0M on YouTube</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <span class="section-label">Contact</span>
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-item-label">Location</span>
+                        International Research Center for Neurointelligence (IRCN)<br>
+                        The University of Tokyo<br>
+                        7-3-1 Hongo, Bunkyo-ku, Tokyo, Japan 113-0033
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item-label">Email</span>
+                        rogerzhangheng [at] gmail [dot] com
+                    </div>
+                    <!--                    <div class="contact-item">-->
+                    <!--                        <span class="contact-item-label">Phone</span>-->
+                    <!--                        (+81)090-2341-7951-->
+                    <!--                    </div>-->
+                </div>
+                <div class="map-container">
+                    <!--                    <iframe-->
+                    <!--                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9282167891844!2d139.76183207589758!3d35.70996247257882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c2ffa206ea3%3A0x30e407498313ba95!2sUniversity%20of%20Tokyo!5e0!3m2!1sen!2sjp!4v1705000000000!5m2!1sen!2sjp"-->
+                    <!--                        allowfullscreen=""-->
+                    <!--                        loading="lazy"-->
+                    <!--                        referrerpolicy="no-referrer-when-downgrade">-->
+                    <!--                    </iframe>-->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.670348133987!2d139.75920227649402!3d35.709728972577935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3ad96a6241%3A0x34fe6ab8a94a4aba!2sIRCN!5e0!3m2!1sen!2sjp!4v1768922743233!5m2!1sen!2sjp"
+                        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://github.com/Roger2148" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/heng-zhang-9a348725a" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?hl=en&authuser=1&user=qfpzRS0AAAAJ"
+                        target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Heng Zhang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/site.js"></script>
+</body>
+
+</html>

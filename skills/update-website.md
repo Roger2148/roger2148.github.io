@@ -1,6 +1,20 @@
 # Skill: Update Personal Website
 
-This skill defines how to update `index.html` for Heng Zhang's personal website.
+This skill defines how to update Heng Zhang's personal website.
+
+The site is four pages that share `assets/site.css`, `assets/site.js` and one nav
+(two-level hover menus on desktop, grouped list in the phone menu). The nav markup
+is duplicated in every page's `<header>`; when you add a section, add its entry to
+the matching menu in **all four files**.
+
+| page | contents |
+|---|---|
+| `index.html` (About me) | hero, `#about`, `#experience`, `#education`, `#more`, `#contact` |
+| `research.html` (As a Researcher) | `#activities`, `#research`, `#publications`, `#presentations`, `#funding`, `#contact` |
+| `developer.html` (As a Developer) | `#projects` with one `<article class="dev-project" id="…">` per project (media left, text right; add `dev-project--flip` to swap), `#contact` |
+| `music.html` (As a Music Lover) | `#music` featured Bilibili player, `#covers` playlist of `.music-tile` buttons (data-bvid/name/sub/date/dur/views; cover in `assets/music/<bvid>.jpg`), `#contact` |
+
+`#contact` (Get in Touch) is repeated at the bottom of every page; the "Contact" nav item links to it on the current page.
 When the user says they have new info to add, use the relevant section below to know exactly what to ask for, then make the edit.
 
 ---
@@ -19,7 +33,7 @@ When the user says they have new info to add, use the relevant section below to 
 ---
 
 ### Funding
-**Location in file**: `<section id="funding">` → inside `<ul class="funding-list">`
+**Location in file**: `research.html` → `<section id="funding">` → inside `<ul class="funding-list">`
 
 **Pattern**: Each item is a `<li class="funding-item">` with collapsed/expanded state.
 
@@ -53,7 +67,7 @@ When the user says they have new info to add, use the relevant section below to 
 ---
 
 ### Publication
-**Location in file**: `<section id="publications">` → inside `<ul class="pub-list">`
+**Location in file**: `research.html` → `<section id="publications">` → inside `<div class="pub-list">`
 
 **Pattern**: Each item is a `<li class="pub-item">` with type badge, title, authors, venue, and optional links.
 
@@ -81,7 +95,7 @@ When the user says they have new info to add, use the relevant section below to 
 ---
 
 ### Experience (Career)
-**Location in file**: `<section id="experience">` → inside `<div class="timeline">`
+**Location in file**: `index.html` → `<section id="experience">` → inside `<div class="timeline">`
 
 **Pattern**: Each item is a `<div class="timeline-item">` with date, title, org, description.
 
@@ -104,7 +118,7 @@ When the user says they have new info to add, use the relevant section below to 
 ---
 
 ### Education
-**Location in file**: `<section id="education">` → inside `<div class="timeline">`
+**Location in file**: `index.html` → `<section id="education">` → inside `<div class="timeline">`
 
 **Same pattern as Experience.**
 
@@ -117,7 +131,7 @@ When the user says they have new info to add, use the relevant section below to 
 ---
 
 ### Research Project
-**Location in file**: `<section id="research">` → inside `<div class="projects-grid">`
+**Location in file**: `research.html` → `<section id="research">` → inside `<div class="projects-grid">`
 
 **Pattern**: Each card is a `<div class="project-card">` with image, title, short and full descriptions.
 
@@ -149,27 +163,52 @@ When the user says they have new info to add, use the relevant section below to 
 
 ---
 
+### Activity (photo card)
+**Location in file**: `research.html` → `<section id="activities">` → inside `<div class="activities-grid">`, newest first.
+
+**Ask for**: kicker (e.g. "Poster · NEURO2026"), title, meta line (venue · place · date), one sentence, 1–3 photos.
+Put web-sized JPEGs (≤1600 px long side) in `assets/activities/`; originals stay out of git.
+
+**HTML template** (`--ar` = image width / height; class by orientation: portrait / landscape / square; add `activity-card--flip` to put the photos on the left):
+```html
+<div class="activity-card">
+  <div class="activity-content">
+    <p class="activity-kicker">[KICKER]</p>
+    <h3>[TITLE]</h3>
+    <p class="activity-meta">[VENUE · PLACE · DATE]</p>
+    <p>[ONE SENTENCE]</p>
+  </div>
+  <div class="activity-preview" aria-hidden="true">
+    <button class="stack-card stack-card--portrait" style="--ar: 1130 / 1600" type="button" data-full="assets/activities/[FILE]" data-caption="[CAPTION]"><img src="assets/activities/[FILE]" alt="[CAPTION]" loading="lazy"></button>
+  </div>
+</div>
+```
+
+---
+
 ### Presentation
-**Location in file**: `<section id="more">` → inside the Presentations subsection
+**Location in file**: `research.html` → `<section id="presentations">` → inside `<div class="pres-list">`, newest first. Compact rows: badge (Talk / Poster), title, one meta line.
 
 **Ask for**:
 - Title
 - Type: Oral or Poster
-- Event/venue name
+- Presenters / authors
+- Event/venue name, city, country
 - Date (e.g., Oct 23, 2025)
 
 **HTML template**:
 ```html
-<div class="presentation-item">
-  <div class="presentation-title">[TITLE]</div>
-  <div class="presentation-meta">[Oral/Poster] · [VENUE] · [DATE]</div>
+<div class="pres-item">
+  <span class="pres-badge">[Talk/Poster]</span>
+  <p class="pres-title">[TITLE]</p>
+  <p class="pres-meta">[VENUE], [CITY], [COUNTRY], [DATE]</p>
 </div>
 ```
 
 ---
 
 ### Hero (Name, Title, Tagline, Photo)
-**Location in file**: `<section class="hero">`
+**Location in file**: `index.html` → `<section class="hero">`
 
 **Ask for**:
 - New job title / affiliation (if changed)
@@ -179,7 +218,7 @@ When the user says they have new info to add, use the relevant section below to 
 ---
 
 ### About (Bio & Skills)
-**Location in file**: `<section id="about">`
+**Location in file**: `index.html` → `<section id="about">`
 
 **Ask for**:
 - Updated bio paragraph(s)
@@ -190,6 +229,6 @@ When the user says they have new info to add, use the relevant section below to 
 ## Notes
 
 - Items within each section are listed **newest first** (top of list = most recent).
-- The file is a single `index.html` — all edits go there.
-- After editing, the user can commit with: `git add index.html && git commit -m "..."` and push to deploy.
+- Styles live in `assets/site.css`, scripts in `assets/site.js`; pages contain markup only.
+- After editing, the user can commit with: `git add -A && git commit -m "..."` and push to deploy.
 - Images should be placed in the repo root or an `images/` subfolder, then referenced by relative path.
