@@ -1336,8 +1336,21 @@ a.topic-work .pres-title { color: var(--color-text); }
 /* overall scale: the rem-based type and spacing shrink together on desktop; the phone stays at 100% */
 @media (min-width: 768px) {
     html { font-size: 90%; }
-    .hero-image { width: 180px; height: 180px; }
+    .hero-image { width: 240px; height: 240px; }
     .hero-path__icon { width: 64px; height: 64px; margin-bottom: 18px; }
     .hero-path__icon svg { width: 26px; height: 26px; }
     .hero-paths { max-width: 660px; }
 }
+
+/* doors share the hero block's edges: first icon under the photo, last mirrored, middle on the page centre */
+@media (min-width: 768px) {
+    .hero-paths { display: flex; justify-content: space-between; max-width: 860px; gap: 0; }
+    .hero-path { width: 240px; flex: 0 0 240px; }
+}
+
+/* nav links sit at the right edge, logo at the left */
+nav.container { grid-template-columns: auto 1fr auto; }
+nav.container .nav { grid-column: 2; justify-self: end; }
+nav.container .nav-toggle { grid-column: 3; }
+.nav__group:last-of-type .nav-menu { left: auto; right: 0; transform: translate(0, -6px); }
+.nav__group:last-of-type:hover .nav-menu, .nav__group:last-of-type:focus-within .nav-menu { transform: translate(0, 0); }
