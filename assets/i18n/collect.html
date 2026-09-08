@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><title>i18n key collector</title>
+<style>body{font:13px/1.4 ui-monospace,Menlo,monospace;margin:20px} pre{white-space:pre-wrap}</style></head><body>
+<p>Collects the exact translation keys of every page (same rules as <code>assets/lang.js</code>). Serve the site and open
+<code>http://127.0.0.1:8070/assets/i18n/collect.html</code>; copy the JSON, or fetch it headlessly with
+<code>chrome --headless=new --virtual-time-budget=8000 --dump-dom &lt;url&gt;</code> and take the text between JSONSTART and JSONEND.
+Keys already in zh-Hans.json are marked ✓; the rest need an <code>E(...)</code> entry in build_i18n.py (or are meant to stay English).</p>
+<pre id="out">working…</pre><script>
+const TEXT_TAGS = new Set(['H1','H2','H3','H4','H5','P','LI','TD','TH','DT','DD','FIGCAPTION','BUTTON','LABEL','SUMMARY','BLOCKQUOTE']);
+const SEL = '.section-label,.nav-menu__label,.nav-menu__sub,.nav__item,.nav-mobile__title,.nav-mobile a,.hero-path__label,.activity-kicker,.activity-meta,.activity-new,.pres-badge,.pres-meta,.pub-type,.timeline-date,.timeline-org,.music-tile__meta,.artist__tags,.dev-meta,.dev-links a,.funding-short,.funding-grant,.funding-meta,.funding-amount,.site-preview__badge,.site-preview__caption,.dev-media__caption,.music-now__meta,.music-now__link,.topic-back,.hero-title,.hero-tagline,.hero-links a,.contact-item-label,.contact-socials a,.project-title-link,.read-more,.read-less,.music-channel,.skill-tag,.about-skills span,.contact-item a';
+const INLINE = new Set(['A','SPAN','STRONG','EM','B','I','SUB','SUP','CODE','BR','SMALL','ABBR','MARK','KBD','WBR','TIME','svg','path','circle','line','rect','polygon','g','text','use','defs','marker','tspan','polyline','ellipse','stop','linearGradient','radialGradient']);
+const SKIP = 'script,style,pre,code,iframe,video,textarea,input,select,noscript,canvas,[data-i18n-skip],.nav-lang,.nav-logo,.hero-text h1,.pub-title,.pub-authors,.pub-venue,.pub-links,.pres-title,.activity-content h3,.music-tile__name,.music-now h3,.artist__name,.artist__jp,.dev-project h3,.lightbox';
+const norm = (s) => s.replace(/\s+/g,' ').trim();
+function inlineOnly(el){ for (const c of el.querySelectorAll('*')) if (!INLINE.has(c.tagName)) return false; return true; }
+function keyOf(el){ const c=el.cloneNode(true); let i=0; c.querySelectorAll('svg').forEach(s=>s.replaceWith(document.createTextNode('{svg'+(i++)+'}'))); return norm(c.innerHTML); }
+function isCand(el){ return (TEXT_TAGS.has(el.tagName)||el.matches(SEL)) && inlineOnly(el); }
+function candidates(root){ const out=[]; (function walk(el){ if(el.nodeType!==1) return; if(el.matches(SKIP)||el.closest(SKIP)) return; if(isCand(el)&&!el.querySelector(SEL)){out.push(el);return;} for(const c of el.children) walk(c); })(root); return out; }
+function meaningful(el){ const t=norm(el.textContent); return t.length>=2 && !/^[\d\W_]+$/.test(t); }
+(async () => {
+  const base = '../../';
+  const pages=['index.html','research.html','developer.html','music.html','topic-sode.html','topic-vision.html','topic-xenovert.html','topic-reservoir.html','topic-temporal.html'];
+  const dict = await fetch('zh-Hans.json').then(r => r.ok ? r.json() : {}).catch(() => ({}));
+  const res={}; const missing=[];
+  for (const p of pages) {
+    const t = await (await fetch(base + p)).text(); const d = new DOMParser().parseFromString(t,'text/html');
+    const seen=new Set(), strings=[];
+    candidates(d.body).forEach(el=>{ if(!meaningful(el)) return; const k=keyOf(el); if(!seen.has(k)){seen.add(k); strings.push(k);} });
+    res[p]={title:d.title, strings};
+    [d.title, ...strings].forEach(k => { if (!dict[k] && !missing.includes(k)) missing.push(k); });
+    d.querySelectorAll('[data-caption]').forEach(e => { const k = e.getAttribute('data-caption'); if (!dict[k] && !missing.includes(k)) missing.push(k); });
+  }
+  document.getElementById('out').textContent = 'Not in zh-Hans.json (' + missing.length + '):\n  ' + missing.join('\n  ') + '\n\nJSONSTART' + JSON.stringify(res) + 'JSONEND';
+})();
+</script></body></html>

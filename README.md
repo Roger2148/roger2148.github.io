@@ -3,7 +3,7 @@
 Heng Zhang's personal site, served by GitHub Pages from `master`.
 
 - Pages: `index.html` (About me), `research.html`, `developer.html`, `music.html`, plus `topic-*.html` for the five research topics.
-- Shared style and script: `assets/site.css`, `assets/site.js`. The nav is duplicated in every page.
+- Shared style and script: `assets/site.css`, `assets/site.js`; inline translation (zh-Hans / zh-Hant / ja) by `assets/lang.js` with dictionaries in `assets/i18n/`. The nav is duplicated in every page.
 - Raw photos and videos go in `assets/temp/` (git-ignored); web-sized copies live under `assets/`.
 
 **Updating the site:** see [`skills/update-website.md`](skills/update-website.md). It lists, for every

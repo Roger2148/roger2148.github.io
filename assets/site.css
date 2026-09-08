@@ -1368,3 +1368,32 @@ nav.container .nav-toggle { grid-column: 3; }
 /* same collapsible header as Contact (title centred in the space left of the icon), so the two line up */
 .explore { text-align: center; }
 .explore .section-content { padding-top: var(--space-sm); }
+
+/* ===== Language switcher (globe menu; on phones it sits left of the hamburger) ===== */
+nav.container .nav-right { grid-column: 3; justify-self: end; display: flex; align-items: center; gap: 6px; }
+nav.container .nav-toggle { grid-column: auto; }
+.nav-lang { display: block; }
+.nav-lang__btn { gap: 6px; background: none; border: 0; cursor: pointer; font: inherit; }
+.nav-lang__globe { width: 16px !important; height: 16px !important; transform: none !important; }
+.nav-lang__code { font-size: .8rem; font-weight: 600; letter-spacing: .04em; min-width: 1.6em; text-align: center; }
+.nav-menu--right { left: auto; right: 0; transform: translate(0, -6px); min-width: 200px; }
+.nav__group:hover .nav-menu--right, .nav__group:focus-within .nav-menu--right, .nav-lang.is-open .nav-menu--right { opacity: 1; transform: translate(0, 0); pointer-events: auto; }
+.nav-menu--lang a { justify-content: space-between; }
+.nav-lang__check { color: var(--color-accent); font-weight: 700; opacity: 0; }
+.nav-menu--lang a.is-active .nav-lang__check { opacity: 1; }
+@media (max-width: 767px) {
+    nav.container .nav-right { gap: 10px; }
+    .nav-lang__btn { padding: 8px 6px; }
+    .nav-lang__btn > svg:last-child { display: none; }
+    .nav-lang__globe { width: 20px !important; height: 20px !important; }
+    .nav-lang__code { font-size: .74rem; }
+    .nav-menu--right { min-width: 180px; }
+}
+/* CJK fallbacks behind the Latin fonts; only active when the page is switched */
+html[data-lang="zh-Hans"] body, html[data-lang="zh-Hans"] .nav, html[data-lang="zh-Hans"] .nav-mobile { font-family: 'Source Sans 3', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; }
+html[data-lang="zh-Hant"] body, html[data-lang="zh-Hant"] .nav, html[data-lang="zh-Hant"] .nav-mobile { font-family: 'Source Sans 3', 'PingFang TC', 'Hiragino Sans CNS', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif; }
+html[data-lang="ja"] body, html[data-lang="ja"] .nav, html[data-lang="ja"] .nav-mobile { font-family: 'Source Sans 3', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', 'Noto Sans JP', sans-serif; }
+html[data-lang="zh-Hans"] h1, html[data-lang="zh-Hans"] h2, html[data-lang="zh-Hans"] h3, html[data-lang="zh-Hans"] .pres-title, html[data-lang="zh-Hans"] .pub-title { font-family: 'Instrument Serif', 'Songti SC', 'STSong', 'Noto Serif SC', Georgia, serif; }
+html[data-lang="zh-Hant"] h1, html[data-lang="zh-Hant"] h2, html[data-lang="zh-Hant"] h3, html[data-lang="zh-Hant"] .pres-title, html[data-lang="zh-Hant"] .pub-title { font-family: 'Instrument Serif', 'Songti TC', 'PMingLiU', 'Noto Serif TC', Georgia, serif; }
+html[data-lang="ja"] h1, html[data-lang="ja"] h2, html[data-lang="ja"] h3, html[data-lang="ja"] .pres-title, html[data-lang="ja"] .pub-title { font-family: 'Instrument Serif', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', Georgia, serif; }
+html:not([data-lang="en"]) .hero-path__label, html:not([data-lang="en"]) .artist__name, html:not([data-lang="en"]) .section-label { letter-spacing: .06em; }

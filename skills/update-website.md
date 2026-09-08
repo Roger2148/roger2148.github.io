@@ -282,13 +282,36 @@ Verify the channel is the official one (channel title, plausible subscriber coun
 
 ---
 
+## 3.11 Translations (zh-Hans, zh-Hant, ja)
+The site has inline translation like the paper site: `assets/lang.js` swaps the text of leaf
+elements using `assets/i18n/<lang>.json`, keyed by the **English innerHTML** of each element
+(whitespace collapsed, `&` as `&amp;`, SVGs as `{svg0}`). English is the source and is never
+edited by the script; switching back restores the original nodes. The visitor's browser language
+picks the start language; a choice from the globe menu is stored and wins. Names, paper titles,
+venues, song titles and tech names deliberately stay English (see `SKIP` in `lang.js`).
+
+**Every time English text changes or is added, its key changes**, so the dictionaries need an entry:
+
+1. Serve the site, open the page, and in the console run `window.__I18N.collect()` (in English) to see the exact keys; or run the headless collector below for all pages at once.
+2. Add `E("<exact English key>", "<zh-Hans>", "<ja>")` in `assets/i18n/build_i18n.py` (section by page). Keep the same inline tags (`<br>`, `<a …>`, `<strong>`) in the values.
+3. Rebuild: `conda run -n bcpnn_local python assets/i18n/build_i18n.py` → writes `zh-Hans.json`, `zh-Hant.json` (OpenCC + `OVERRIDE_HANT`), `ja.json`.
+4. Check: with the page in English, `collect().strings.filter(s => !dict[s])` against each JSON should list only strings meant to stay English.
+
+Dynamic strings assembled by `site.js` (music "views", month labels, playlist notes) go through `window.__I18N.t()`; the dictionary has every `Mon YYYY` for 2025–2027 and each playlist note, so new covers only need a note entry if the note is new.
+
+Key collector for all nine pages: serve the site and open `http://127.0.0.1:8070/assets/i18n/collect.html`.
+It lists every key not yet in `zh-Hans.json` (lightbox captions included) and dumps the full key list as JSON.
+
+Strings to leave English: add the class to `SKIP` in `lang.js` (whole element) or simply omit the key from the dictionary (element stays as is).
+
 ## 4. Checks before pushing
 
 1. Serve locally and load every touched page; check the phone width too (nav, cards, no horizontal scroll).
 2. If the nav changed: `grep -c "NEW LABEL" index.html research.html developer.html music.html topic-*.html` must show 1 in every file.
 3. New media: file sizes sane (`du -sh assets/*`), nothing from `assets/temp/` staged (`git status`).
 4. Video, YouTube and Bilibili players: press play once in a real browser after deploy; headless checks cannot verify playback.
-5. Commit message: one line saying what changed, plus bullets if several things.
+5. If any English text changed: dictionaries rebuilt (3.11) and the page checked once in 日本語 or 中文.
+6. Commit message: one line saying what changed, plus bullets if several things.
 
 ## 5. Style notes (keep the voice)
 - Activities and developer cards are short and casual, first person, one sentence; the formal venue strings live in Presentations.

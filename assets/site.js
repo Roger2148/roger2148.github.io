@@ -253,7 +253,8 @@ document.addEventListener('click', function (e) {
             t.classList.add('is-current');
             if (cover) cover.src = 'assets/music/' + d.bvid + '.jpg';
             if (title) title.textContent = d.name;
-            if (meta) meta.textContent = (d.sub ? d.sub + ' · ' : '') + d.date + ' · ' + d.dur + ' · ' + Number(d.views).toLocaleString() + ' views';
+            const tr = (s) => (window.__I18N ? window.__I18N.t(s) : s);
+            if (meta) meta.textContent = (d.sub ? tr(d.sub) + ' · ' : '') + tr(d.date) + ' · ' + d.dur + ' · ' + Number(d.views).toLocaleString() + ' ' + tr('views');
             if (link) link.href = 'https://www.bilibili.com/video/' + d.bvid;
             play(d.bvid);
             document.getElementById('music').scrollIntoView({ behavior: 'smooth', block: 'start' });
