@@ -93,9 +93,9 @@ E("More of me", "我的其他面", "ほかの顔も")
 
 # ---------------------------------------------------------------- about
 E("About", "关于", "自己紹介")
-E("I am a postdoctoral researcher at the International Research Center for Neurointelligence (IRCN), University of Tokyo, in collaboration with KTH Royal Institute of Technology. My research develops bio-inspired AI systems for computer vision and natural language processing by drawing on principles of predictive processing and self-organization observed in biological systems.",
-  "我是东京大学神经智能国际研究机构（IRCN）的博士后研究员，与瑞典皇家理工学院（KTH）合作开展研究。我的研究借鉴生物系统中的预测加工与自组织原理，研发面向计算机视觉与自然语言处理的类脑 AI 系统。",
-  "東京大学ニューロインテリジェンス国際研究機構（IRCN）の博士研究員として、スウェーデン王立工科大学（KTH）と共同で研究を行っています。生物システムに見られる予測処理と自己組織化の原理を手がかりに、コンピュータビジョンと自然言語処理のための生物に着想を得たAIシステムを開発しています。")
+E("I am a postdoctoral researcher at the International Research Center for Neurointelligence (WPI-IRCN), UTIAS, The University of Tokyo, in collaboration with KTH Royal Institute of Technology. My research develops bio-inspired AI systems for computer vision and natural language processing by drawing on principles of predictive processing and self-organization observed in biological systems.",
+  "我是东京大学国际高等研究所神经智能国际研究机构（WPI-IRCN）的博士后研究员，与瑞典皇家理工学院（KTH）合作开展研究。我的研究借鉴生物系统中的预测加工与自组织原理，研发面向计算机视觉与自然语言处理的类脑 AI 系统。",
+  "東京大学国際高等研究所ニューロインテリジェンス国際研究機構（WPI-IRCN）の博士研究員として、スウェーデン王立工科大学（KTH）と共同で研究を行っています。生物システムに見られる予測処理と自己組織化の原理を手がかりに、コンピュータビジョンと自然言語処理のための生物に着想を得たAIシステムを開発しています。")
 E("I focus on creating adaptive and robust learning frameworks that excel in dynamic, uncertain environments. My work spans unsupervised learning, dynamical systems, neural representations, and sequence learning. Through computational modeling of brain functions—particularly prediction and complex sequence processing—I aim to develop artificial intelligence that reflects the efficiency and resilience of biological cognition.",
   "我致力于构建能在动态、不确定环境中稳定工作的自适应、鲁棒学习框架，研究涵盖无监督学习、动力系统、神经表征与序列学习。通过对大脑功能（尤其是预测与复杂序列加工）的计算建模，我希望发展出兼具生物认知效率与韧性的人工智能。",
   "動的で不確実な環境でも力を発揮する、適応的で頑健な学習フレームワークの構築に取り組んでいます。研究は教師なし学習、力学系、神経表現、系列学習にまたがります。脳機能、とりわけ予測と複雑な系列処理の計算モデリングを通じて、生物の認知が持つ効率性と回復力を備えた人工知能の実現を目指しています。")
@@ -113,7 +113,7 @@ E("Robustness", "鲁棒性", "頑健性")
 E("Career", "职业", "キャリア")
 E("April 2025 — Present", "2025年4月 — 至今", "2025年4月 — 現在")
 E("Postdoctoral Researcher", "博士后研究员", "博士研究員")
-E("University of Tokyo — IRCN", "东京大学 — IRCN", "東京大学 — IRCN")
+E("International Research Center for Neurointelligence (WPI-IRCN), UTIAS, The University of Tokyo", "东京大学国际高等研究所 神经智能国际研究机构（WPI-IRCN）", "東京大学国際高等研究所 ニューロインテリジェンス国際研究機構（WPI-IRCN）")
 E("Collaborative initiative with KTH Royal Institute of Technology. Computational modeling of brain functions including prediction and complex sequence processing for bio-inspired AI.",
   "与瑞典皇家理工学院（KTH）的合作项目。面向类脑 AI，对预测与复杂序列加工等大脑功能进行计算建模。",
   "スウェーデン王立工科大学（KTH）との共同プロジェクト。生物に着想を得たAIに向けて、予測や複雑な系列処理といった脳機能を計算論的にモデル化しています。")
@@ -363,6 +363,7 @@ E("IEEE TPAMI, under review", "IEEE TPAMI，审稿中", "IEEE TPAMI、査読中"
 E("In submission, 2025", "投稿中，2025", "投稿中、2025")
 E("Manuscript in preparation, 2026 · soon to submit", "撰写中，2026 · 即将投稿", "執筆中、2026 · 投稿予定")
 E("Talk · AICCC 2022, Osaka", "报告 · AICCC 2022，大阪", "講演 · AICCC 2022、大阪")
+E("IPSJ 86th National Convention, 2024 · with Masato Osugi", "情報処理学会第86回全国大会，2024 · 与 Masato Osugi 合作", "情報処理学会第86回全国大会、2024 · Masato Osugi と共著")
 E("Poster · Photonic Computing Symposium, NICT, 2024", "海报 · 光计算研讨会，NICT，2024", "ポスター · 光コンピューティングシンポジウム、NICT、2024")
 E("Talk &amp; poster · IRCN Retreat, 2025", "报告 &amp; 海报 · IRCN Retreat，2025", "講演 &amp; ポスター · IRCN リトリート、2025")
 E("Poster · NEURO2026, Kobe", "海报 · NEURO2026，神户", "ポスター · NEURO2026、神戸")
