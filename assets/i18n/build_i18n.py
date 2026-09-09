@@ -117,16 +117,16 @@ E("International Research Center for Neurointelligence (WPI-IRCN), UTIAS, The Un
 E("Collaborative initiative with KTH Royal Institute of Technology. Computational modeling of brain functions including prediction and complex sequence processing for bio-inspired AI.",
   "与瑞典皇家理工学院（KTH）的合作项目。面向类脑 AI，对预测与复杂序列加工等大脑功能进行计算建模。",
   "スウェーデン王立工科大学（KTH）との共同プロジェクト。生物に着想を得たAIに向けて、予測や複雑な系列処理といった脳機能を計算論的にモデル化しています。")
-E("Oct 2024 — May 2025", "2024年10月 — 2025年5月", "2024年10月 — 2025年5月")
+E("Oct 2024 — Mar 2025", "2024年10月 — 2025年3月", "2024年10月 — 2025年3月")
 E("Kyushu University", "九州大学", "九州大学")
 E("Developing robust and adaptive machine learning models. Building bio-inspired AI systems resistant to adversarial attacks and noise corruptions.",
   "研发鲁棒且自适应的机器学习模型，构建能抵御对抗攻击与噪声损坏的类脑 AI 系统。",
   "頑健で適応的な機械学習モデルの開発。敵対的攻撃やノイズ劣化に強い、生物に着想を得たAIシステムを構築。")
-E("May 2024 — Present", "2024年5月 — 至今", "2024年5月 — 現在")
+E("May 2024 — Mar 2025", "2024年5月 — 2025年3月", "2024年5月 — 2025年3月")
 E("System Engineer", "系统工程师", "システムエンジニア")
 E("3D open-world game development, machine learning engineering, and UI/UX design.",
   "3D 开放世界游戏开发、机器学习工程与 UI/UX 设计。", "3Dオープンワールドゲームの開発、機械学習エンジニアリング、UI/UXデザイン。")
-E("July 2022 — Sept 2024", "2022年7月 — 2024年9月", "2022年7月 — 2024年9月")
+E("June 2022 — Sept 2024", "2022年6月 — 2024年9月", "2022年6月 — 2024年9月")
 E("Research Assistant", "研究助理", "リサーチアシスタント")
 E("Research assistant for projects in mathematics and information engineering. Lab assistant for stem cell culturing.",
   "参与数学与信息工程方向的研究项目，并担任干细胞培养的实验室助理。", "数学・情報工学分野の研究プロジェクトを補助。幹細胞培養のラボアシスタントも担当。")
